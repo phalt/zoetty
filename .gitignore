@@ -1,0 +1,17 @@
+.venv/
+.ty_cache/
+.ruff_cache/
+.import_linter_cache/
+.pytest_cache/
+.idea/
+__pycache__
+.DS_Store
+dist/
+site/
+htmlcov/
+*.coverage*
+coverage.xml
+.cache/
+
+# Transcripts written by releasing zoetty with PUBLISHING.md
+/logs/
