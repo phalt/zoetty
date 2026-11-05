@@ -57,10 +57,13 @@ fi
 
 ## Run the checks
 
+The tests have to pass, but coverage isn't checked here: CI holds it at 100% on
+Linux, and a few lines only run on Linux, so it reads a little lower on macOS.
+
 ```sh run
 make ty
 make lint-imports
-make test
+uv run pytest -q
 ```
 
 ## Check the docs clips are up to date
