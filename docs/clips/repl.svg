@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="586" height="238" viewBox="0 0 586 238" role="img" aria-label="A Python REPL importing zoetty&#x27;s markup parser and parsing some styled text">
+<title>A Python REPL importing zoetty&#x27;s markup parser and parsing some styled text</title>
+<style>
+text{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-size:14px;white-space:pre}
+.a{animation-duration:6.07s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.blink{animation:zt-repl-blink 1s step-end infinite}
+@keyframes zt-repl-blink{50%{opacity:0}}
+@keyframes zt-repl-l0{0%{opacity:0}6.590%,100%{opacity:1}}
+@keyframes zt-repl-t0-2{0%,9.061%{transform:translateX(0);animation-timing-function:steps(9,end)}15.651%,100%{transform:translateX(75.6px)}}
+@keyframes zt-repl-k0{0%{opacity:0}6.590%{opacity:1}23.888%,100%{opacity:0}}
+@keyframes zt-repl-l1{0%{opacity:0}23.888%,100%{opacity:1}}
+@keyframes zt-repl-l2{0%{opacity:0}25.041%,100%{opacity:1}}
+@keyframes zt-repl-l3{0%{opacity:0}26.194%,100%{opacity:1}}
+@keyframes zt-repl-l4{0%{opacity:0}27.348%,100%{opacity:1}}
+@keyframes zt-repl-l5{0%{opacity:0}28.501%,100%{opacity:1}}
+@keyframes zt-repl-l6{0%{opacity:0}29.654%,100%{opacity:1}}
+@keyframes zt-repl-l7{0%{opacity:0}34.102%,100%{opacity:1}}
+@keyframes zt-repl-k7{0%{opacity:0}34.102%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-repl-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0px)}}
+@keyframes zt-repl-fade{0%{opacity:1}90.115%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.a,.blink{animation:none!important}.cover,.caret{display:none}.scroll{transform:translateY(-0px)}}
+</style>
+<defs><clipPath id="zt-repl-screen"><rect x="0" y="52" width="586" height="168"/></clipPath></defs>
+<rect width="586" height="238" rx="10" fill="#1c1c1c"/>
+<path d="M0 10a10 10 0 0 1 10-10h566a10 10 0 0 1 10 10v24h-586z" fill="#2a2a2a"/><circle cx="18" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><circle cx="36" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><circle cx="54" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><text x="293.0" y="22.0" text-anchor="middle" opacity=".5" fill="#d0d0d0" style="font-size:13px">python</text>
+<g clip-path="url(#zt-repl-screen)" fill="#d0d0d0"><g class="a" style="animation-name:zt-repl-fade"><g class="a scroll" style="animation-name:zt-repl-scroll">
+<g class="a" style="animation-name:zt-repl-l0"><text x="24.0" y="67.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="67.8" textLength="75.6" lengthAdjust="spacingAndGlyphs">python -q</text>
+<g class="a cover" style="animation-name:zt-repl-t0-2"><rect x="40.8" y="52.0" width="84.0" height="21" fill="#1c1c1c"/></g>
+</g>
+<g class="a caret" style="animation-name:zt-repl-k0"><g class="a" style="animation-name:zt-repl-t0-2"><rect class="blink" x="40.8" y="54.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+<g class="a" style="animation-name:zt-repl-l1"><text x="24.0" y="88.8" textLength="352.8" lengthAdjust="spacingAndGlyphs">&gt;&gt;&gt; from zoetty.markup import parse, plain</text>
+</g>
+<g class="a" style="animation-name:zt-repl-l2"><text x="24.0" y="109.8" textLength="294.0" lengthAdjust="spacingAndGlyphs">&gt;&gt;&gt; plain(parse(&quot;[bold]zoe[/]tty&quot;))</text>
+</g>
+<g class="a" style="animation-name:zt-repl-l3"><text x="24.0" y="130.8" textLength="67.2" lengthAdjust="spacingAndGlyphs">&#x27;zoetty&#x27;</text>
+</g>
+<g class="a" style="animation-name:zt-repl-l4"><text x="24.0" y="151.8" textLength="462.0" lengthAdjust="spacingAndGlyphs">&gt;&gt;&gt; [s.styles for s in parse(&quot;[bold green]ok[/] done&quot;)]</text>
+</g>
+<g class="a" style="animation-name:zt-repl-l5"><text x="24.0" y="172.8" textLength="193.2" lengthAdjust="spacingAndGlyphs">[(&#x27;bold&#x27;, &#x27;green&#x27;), ()]</text>
+</g>
+<g class="a" style="animation-name:zt-repl-l6"><text x="24.0" y="193.8" textLength="25.2" lengthAdjust="spacingAndGlyphs">&gt;&gt;&gt;</text>
+</g>
+<g class="a" style="animation-name:zt-repl-l7"><text x="24.0" y="214.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text>
+</g>
+<g class="a caret" style="animation-name:zt-repl-k7"><g><rect class="blink" x="40.8" y="201.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+</g></g></g>
+</svg>

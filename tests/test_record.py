@@ -64,3 +64,21 @@ def test_setup_runs_in_order_and_stops_on_failure(spec, tmp_path):
         record.setup(clip, record.environment(clip))
     assert (tmp_path / "b").read_text() == "one\n" and not (tmp_path / "c").exists()
     assert (error.value.command, error.value.exit_code, error.value.output) == ("echo oops; exit 4", 4, "oops\n")
+
+
+def test_end_of_input_is_sent_once_input_runs_out(tmp_path):
+    # cat would wait for ever; after the last line of input it gets Ctrl-D, like a person ending a session.
+    result = run("cat; echo finished", tmp_path, input="hi\n", timeout=10)
+    assert result.output.endswith(b"finished\r\n") and not result.timed_out
+    assert b"^D" not in result.output  # control characters aren't echoed as ^D
+
+
+def test_no_end_of_input_without_input(tmp_path):
+    result = run("cat", tmp_path, timeout=1)
+    assert result.timed_out
+
+
+def test_a_program_that_shows_the_end_of_input_still_has_no_marker(tmp_path):
+    # Python's REPL prints ^D itself when it gets end of input; only that one is dropped.
+    result = run("cat; printf '^Dbye ^D'", tmp_path, input="hi\n", timeout=10)
+    assert result.output.endswith(b"bye ^D")

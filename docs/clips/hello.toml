@@ -1,0 +1,13 @@
+# The smallest useful clip: two commands, with their output written by hand.
+title = "~/my-project"
+label = "Typing two commands in a terminal: echo prints a greeting, ls lists three files"
+cols = 60
+out = ["hello.svg", "hello.html"]
+
+[[run]]
+cmd = "echo 'Hello from zoetty!'"
+lines = ["Hello from zoetty!"]
+
+[[run]]
+cmd = "ls"
+lines = ["[blue]docs[/]  README.md  [green]tool.py[/]"]

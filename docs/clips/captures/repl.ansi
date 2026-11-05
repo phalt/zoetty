@@ -1,0 +1,6 @@
+>>> from zoetty.markup import parse, plain
+>>> plain(parse("[bold]zoe[/]tty"))
+'zoetty'
+>>> [s.styles for s in parse("[bold green]ok[/] done")]
+[('bold', 'green'), ()]
+>>> 

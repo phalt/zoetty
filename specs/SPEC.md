@@ -70,6 +70,7 @@ line_gap = 0.07                                             # optional, override
 ```
 
 - A run has at most one of `output` and `lines`. A run with neither shows no output.
+- After the last line of `input`, `record` sends Ctrl-D (end of input) once the program is quiet, so REPLs exit the way a person would leave them.
 - `record` runs every run that has `output` (unless `record = false`), in order, in one working folder, and writes the capture to `output`. Runs with `lines` are never executed.
 - `build` fails with a clear message if an `output` file doesn't exist yet ("run `zoetty record` first").
 - Output lines (captured or `lines`) wider than `cols` wrap onto the next row, as in a terminal.

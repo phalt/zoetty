@@ -73,11 +73,18 @@ def run(
     """Run a shell command in a pty sized cols x rows and return everything it wrote.
 
     Each line of `input` is typed once the command has been quiet for a moment, so it
-    lands after the prompt that asked for it, the way a person would type it.
+    lands after the prompt that asked for it, the way a person would type it. Once it has
+    all been typed, Ctrl-D (end of input) is sent, which ends a REPL or a `cat`.
     """
     pending = (input or "").splitlines(keepends=True)
+    if pending:
+        pending.append("\x04")
     primary, secondary = pty.openpty()
     fcntl.ioctl(secondary, termios.TIOCSWINSZ, struct.pack("HHHH", rows, cols, 0, 0))
+    # Don't echo control characters as ^D, ^C: nobody sees those in a real session.
+    attributes = termios.tcgetattr(secondary)
+    attributes[3] &= ~termios.ECHOCTL
+    termios.tcsetattr(secondary, termios.TCSANOW, attributes)
     process = subprocess.Popen(
         ["/bin/sh", "-c", command],
         stdin=secondary,
@@ -89,6 +96,7 @@ def run(
     )
     os.close(secondary)
     output = bytearray()
+    ended_at: int | None = None
     deadline = time.monotonic() + timeout
     try:
         while True:
@@ -106,9 +114,17 @@ def run(
                     break
                 output += chunk
             elif pending:
-                os.write(primary, pending.pop(0).encode())
+                typed = pending.pop(0)
+                os.write(primary, typed.encode())
+                if typed == "\x04":
+                    ended_at = len(output)
             elif process.poll() is not None:
                 break
     finally:
         os.close(primary)
+    if ended_at is not None:
+        # Some programs (Python's REPL) turn control-character echo back on: drop the ^D it shows.
+        marker = output.find(b"^D", ended_at)
+        if marker != -1:
+            del output[marker : marker + 2]
     return Result(process.wait(), bytes(output))

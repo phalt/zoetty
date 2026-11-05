@@ -1,0 +1,24 @@
+# zoetty recording itself: init a clip, build it, check it.
+title = "~/my-project"
+label = "zoetty init writes a starter clip spec, zoetty build renders it to SVG, and zoetty check confirms it is up to date"
+cols = 72
+out = ["quickstart.svg", "quickstart.html"]
+
+[record]
+cwd = "/tmp"
+setup = ["rm -rf zoetty-quickstart", "mkdir zoetty-quickstart"]
+
+[[run]]
+cmd = "zoetty init clips/hello.toml"
+exec = "cd zoetty-quickstart && zoetty init clips/hello.toml"
+output = "captures/quickstart-init.ansi"
+
+[[run]]
+cmd = "zoetty build clips/hello.toml"
+exec = "cd zoetty-quickstart && zoetty build clips/hello.toml"
+output = "captures/quickstart-build.ansi"
+
+[[run]]
+cmd = "zoetty check clips/hello.toml"
+exec = "cd zoetty-quickstart && zoetty check clips/hello.toml"
+output = "captures/quickstart-check.ansi"

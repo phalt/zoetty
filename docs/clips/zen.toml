@@ -1,0 +1,23 @@
+# Long output scrolls once it passes `rows`, and [theme] recolours the window.
+title = "python -m this"
+label = "python -m this printing the Zen of Python, scrolling past the bottom of a ten-row terminal"
+cols = 72
+rows = 10
+line_gap = 0.18
+hold = 3
+out = ["zen.svg", "zen.html"]
+
+[[run]]
+cmd = "python -m this"
+output = "captures/zen.ansi"
+
+[theme]
+bg = "#282c34"
+bar = "#21252b"
+fg = "#abb2bf"
+blue = "#61afef"
+green = "#98c379"
+yellow = "#e5c07b"
+red = "#e06c75"
+cyan = "#56b6c2"
+magenta = "#c678dd"

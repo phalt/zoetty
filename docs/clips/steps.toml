@@ -1,0 +1,94 @@
+# A hand-timed clip: [[step]] entries say exactly when each line appears.
+# This is the clip on the paulrun README, re-enacting `paulrun hello.md`.
+title = "~/hello"
+label = "paulrun checking and running hello.md: it asks for NAME, shows the plan, runs a shell step and a Python step, and finishes ok"
+duration = 16
+out = ["steps.svg", "steps.html"]
+cols = 56
+
+[[step]]
+at = 0.4
+caret = true
+lines = ["[dim]$[/] [type 1.3]paulrun check hello.md[/]"]
+
+[[step]]
+at = 2.2
+lines = ["[green]hello.md: ok[/]"]
+
+[[step]]
+at = 2.8
+caret = true
+lines = ["[dim]$[/] [type 0.9]paulrun hello.md[/]"]
+
+[[step]]
+at = 4.2
+caret = true
+lines = ["NAME [dim](Who to say hello to)[/]: [type 0.5 0.4]Paul[/]"]
+
+[[step]]
+at = 5.5
+lines = [
+  "[blue]╭─ [/][bold blue]Say hello[/][blue] ─────────────────────╮[/]",
+  "[blue]│[/] [dim]directory[/]  /home/you/hello      [blue]│[/]",
+  "[blue]│[/] [dim]inputs[/]     NAME=Paul            [blue]│[/]",
+  "[blue]│[/] [dim]steps[/]      1. Greet             [blue]│[/]",
+  "[blue]│[/]            2. Count the letters [blue]│[/]",
+  "[blue]│[/] [dim]blocks[/]     2 run blocks         [blue]│[/]",
+  "[blue]╰─────────────────────────────────╯[/]",
+]
+
+[[step]]
+at = 6.1
+caret = true
+lines = ["Start? \\[y/N] [type 0.05 0.8]y[/]"]
+
+[[step]]
+at = 7.4
+lines = ["", "[bold blue]1/2  Greet[/] [blue]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[/]"]
+
+[[step]]
+at = 7.7
+lines = ["  [dim italic]Saying hello to Paul.[/]"]
+
+[[step]]
+at = 8.0
+lines = ["", "  [dim]┌ [/][bold]sh[/][dim] · 10:02:13.482[/]"]
+
+[[step]]
+at = 8.4
+lines = ["  [dim]│[/] Hello, Paul!"]
+
+[[step]]
+at = 8.7
+lines = ["  [dim]└ [/][green]✓ exit 0[/][dim] · 0.0s[/]"]
+
+[[step]]
+at = 9.2
+lines = [
+  "",
+  "[bold blue]2/2  Count the letters[/] [blue]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[/]",
+  "",
+  "  [dim]┌ [/][bold]python[/][dim] · 10:02:13.483[/]",
+]
+
+[[step]]
+at = 9.9
+lines = ["  [dim]│[/] Paul has 4 letters"]
+
+[[step]]
+at = 10.2
+lines = ["  [dim]└ [/][green]✓ exit 0[/][dim] · 0.1s[/]"]
+
+[[step]]
+at = 10.8
+lines = [
+  "",
+  "[green]╭──────────────────────╮[/]",
+  "[green]│ ✓ [/][bold]finished ok[/][dim] · 0.1s[/][green] │[/]",
+  "[green]╰──────────────────────╯[/]",
+]
+
+[[step]]
+at = 11.5
+caret = true
+lines = ["[dim]$[/] "]

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="653" height="238" viewBox="0 0 653 238" role="img" aria-label="zoetty init writes a starter clip spec, zoetty build renders it to SVG, and zoetty check confirms it is up to date">
+<title>zoetty init writes a starter clip spec, zoetty build renders it to SVG, and zoetty check confirms it is up to date</title>
+<style>
+text{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-size:14px;white-space:pre}
+.a{animation-duration:12.4s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.blink{animation:zt-quickstart-blink 1s step-end infinite}
+@keyframes zt-quickstart-blink{50%{opacity:0}}
+@keyframes zt-quickstart-l0{0%{opacity:0}3.226%,100%{opacity:1}}
+@keyframes zt-quickstart-t0-2{0%,4.435%{transform:translateX(0);animation-timing-function:steps(28,end)}12.500%,100%{transform:translateX(235.2px)}}
+@keyframes zt-quickstart-k0{0%{opacity:0}3.226%{opacity:1}16.532%,100%{opacity:0}}
+@keyframes zt-quickstart-l1{0%{opacity:0}16.532%,100%{opacity:1}}
+@keyframes zt-quickstart-l2{0%{opacity:0}17.097%,100%{opacity:1}}
+@keyframes zt-quickstart-l3{0%{opacity:0}24.919%,100%{opacity:1}}
+@keyframes zt-quickstart-t3-2{0%,26.129%{transform:translateX(0);animation-timing-function:steps(29,end)}34.516%,100%{transform:translateX(243.6px)}}
+@keyframes zt-quickstart-k3{0%{opacity:0}24.919%{opacity:1}38.516%,100%{opacity:0}}
+@keyframes zt-quickstart-l4{0%{opacity:0}38.516%,100%{opacity:1}}
+@keyframes zt-quickstart-l5{0%{opacity:0}46.336%,100%{opacity:1}}
+@keyframes zt-quickstart-t5-2{0%,47.546%{transform:translateX(0);animation-timing-function:steps(29,end)}55.933%,100%{transform:translateX(243.6px)}}
+@keyframes zt-quickstart-k5{0%{opacity:0}46.336%{opacity:1}59.927%,100%{opacity:0}}
+@keyframes zt-quickstart-l6{0%{opacity:0}59.927%,100%{opacity:1}}
+@keyframes zt-quickstart-l7{0%{opacity:0}67.750%,100%{opacity:1}}
+@keyframes zt-quickstart-k7{0%{opacity:0}67.750%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-quickstart-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0px)}}
+@keyframes zt-quickstart-fade{0%{opacity:1}95.161%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.a,.blink{animation:none!important}.cover,.caret{display:none}.scroll{transform:translateY(-0px)}}
+</style>
+<defs><clipPath id="zt-quickstart-screen"><rect x="0" y="52" width="653" height="168"/></clipPath></defs>
+<rect width="653" height="238" rx="10" fill="#1c1c1c"/>
+<path d="M0 10a10 10 0 0 1 10-10h633a10 10 0 0 1 10 10v24h-653z" fill="#2a2a2a"/><circle cx="18" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><circle cx="36" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><circle cx="54" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><text x="326.5" y="22.0" text-anchor="middle" opacity=".5" fill="#d0d0d0" style="font-size:13px">~/my-project</text>
+<g clip-path="url(#zt-quickstart-screen)" fill="#d0d0d0"><g class="a" style="animation-name:zt-quickstart-fade"><g class="a scroll" style="animation-name:zt-quickstart-scroll">
+<g class="a" style="animation-name:zt-quickstart-l0"><text x="24.0" y="67.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="67.8" textLength="235.2" lengthAdjust="spacingAndGlyphs">zoetty init clips/hello.toml</text>
+<g class="a cover" style="animation-name:zt-quickstart-t0-2"><rect x="40.8" y="52.0" width="243.6" height="21" fill="#1c1c1c"/></g>
+</g>
+<g class="a caret" style="animation-name:zt-quickstart-k0"><g class="a" style="animation-name:zt-quickstart-t0-2"><rect class="blink" x="40.8" y="54.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+<g class="a" style="animation-name:zt-quickstart-l1"><text x="24.0" y="88.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#2fcf7a">✓</text><text x="40.8" y="88.8" textLength="184.8" lengthAdjust="spacingAndGlyphs">wrote clips/hello.toml</text>
+</g>
+<g class="a" style="animation-name:zt-quickstart-l2"><text x="40.8" y="109.8" textLength="42.0" lengthAdjust="spacingAndGlyphs">next:</text><text x="91.2" y="109.8" textLength="243.6" lengthAdjust="spacingAndGlyphs" font-weight="700">zoetty build clips/hello.toml</text>
+</g>
+<g class="a" style="animation-name:zt-quickstart-l3"><text x="24.0" y="130.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="130.8" textLength="243.6" lengthAdjust="spacingAndGlyphs">zoetty build clips/hello.toml</text>
+<g class="a cover" style="animation-name:zt-quickstart-t3-2"><rect x="40.8" y="115.0" width="252.0" height="21" fill="#1c1c1c"/></g>
+</g>
+<g class="a caret" style="animation-name:zt-quickstart-k3"><g class="a" style="animation-name:zt-quickstart-t3-2"><rect class="blink" x="40.8" y="117.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+<g class="a" style="animation-name:zt-quickstart-l4"><text x="24.0" y="151.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#2fcf7a">✓</text><text x="40.8" y="151.8" textLength="126.0" lengthAdjust="spacingAndGlyphs">clips/hello.svg</text><text x="175.2" y="151.8" textLength="58.8" lengthAdjust="spacingAndGlyphs" opacity=".55">(4.2KB)</text>
+</g>
+<g class="a" style="animation-name:zt-quickstart-l5"><text x="24.0" y="172.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="172.8" textLength="243.6" lengthAdjust="spacingAndGlyphs">zoetty check clips/hello.toml</text>
+<g class="a cover" style="animation-name:zt-quickstart-t5-2"><rect x="40.8" y="157.0" width="252.0" height="21" fill="#1c1c1c"/></g>
+</g>
+<g class="a caret" style="animation-name:zt-quickstart-k5"><g class="a" style="animation-name:zt-quickstart-t5-2"><rect class="blink" x="40.8" y="159.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+<g class="a" style="animation-name:zt-quickstart-l6"><text x="24.0" y="193.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#2fcf7a">✓</text><text x="40.8" y="193.8" textLength="134.4" lengthAdjust="spacingAndGlyphs">clips/hello.toml</text>
+</g>
+<g class="a" style="animation-name:zt-quickstart-l7"><text x="24.0" y="214.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text>
+</g>
+<g class="a caret" style="animation-name:zt-quickstart-k7"><g><rect class="blink" x="40.8" y="201.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+</g></g></g>
+</svg>
