@@ -1,0 +1,53 @@
+site_name: zoetty
+site_url: https://phalt.github.io/zoetty/
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - navigation.footer
+  palette:
+    # Dark first: terminal clips look at home there.
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+repo_name: phalt/zoetty
+repo_url: https://github.com/phalt/zoetty
+nav:
+  - ⚜ Home: index.md
+  - 🚀 Install: install.md
+  - 📝 Documentation:
+    - 📜 Clip format: clip-format.md
+    - 📟 Command line: cli.md
+    - 🖼️ Embedding clips: embedding.md
+    - 🎞️ Examples: examples.md
+    - 🤖 Using zoetty with an agent: agents.md
+  - 🗒️ Change Log: CHANGELOG.md
+
+exclude_docs: |
+  clips/captures/
+
+markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.highlight
+  - pymdownx.snippets:
+      base_path: ["docs"]
+      check_paths: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
