@@ -99,7 +99,8 @@ layers = [
     "zoetty.record | zoetty.svg | zoetty.html",
     "zoetty.timeline",
     "zoetty.clip",
-    "zoetty.ansi | zoetty.markup",
+    "zoetty.ansi",
+    "zoetty.markup",
     "zoetty.settings",
 ]
 broken_contract_guidance = """
@@ -137,3 +138,8 @@ id = "no-cycles"
 name = "No import cycles"
 type = "acyclic_siblings"
 ancestors = ["zoetty"]
+
+[tool.ruff.lint.per-file-ignores]
+# The renderers are mostly SVG/HTML/CSS templates, which read better unwrapped.
+"zoetty/svg.py" = ["E501"]
+"zoetty/html.py" = ["E501"]

@@ -58,3 +58,7 @@ def test_carriage_returns():
 def test_trailing_blank_lines_are_dropped_but_inner_ones_kept():
     assert to_markup("a\n\nb\n\n\n") == ["a", "", "b"]
     assert to_markup("") == []
+
+
+def test_unsupported_codes_like_underline_are_ignored():
+    assert to_markup(f"{ESC}[4;32mx{ESC}[24m") == ["[green]x[/]"]
