@@ -29,6 +29,7 @@ repo_name: phalt/zoetty
 repo_url: https://github.com/phalt/zoetty
 nav:
   - ⚜ Home: index.md
+  - 💡 Why zoetty: why.md
   - 🚀 Install: install.md
   - 📝 Documentation:
     - 📜 Clip format: clip-format.md

@@ -2,6 +2,8 @@
 
 ## What is zoetty?
 
+**Tiny terminal demos from real output, kept honest by CI.**
+
 zoetty turns terminal sessions into small, looping, animated clips made of plain SVG or HTML and CSS. No video, no GIF, no JavaScript.
 
 <div style="text-align: center; padding-top:10px;">
@@ -20,14 +22,13 @@ That's zoetty, recorded by zoetty, and shown here as its HTML output: try select
 
 ## Why use zoetty?
 
-Terminal GIFs go stale, weigh megabytes, look blurry, and have to be re-recorded by hand every time the output changes.
+- **Demos that can't go stale** - `zoetty record` captures what your commands really print, and `zoetty check` fails CI the moment a clip stops matching. CI doesn't even need your tool installed.
+- **Tiny** - Clips are a few KB of text, not megabytes of GIF. zoetty itself is pure Python with two dependencies: no ffmpeg, no browser, no Node.
+- **Nothing new to learn** - A clip is a short TOML file, the same format as your `pyproject.toml`. No custom scripting language.
+- **Made for agents** - Paste [one prompt](#use-it-with-your-coding-agent) and your coding agent writes, records, builds and checks the clip for you.
+- **Plays everywhere** - The SVG works anywhere images do, GitHub and PyPI included. The same spec builds an HTML fragment with selectable text for your docs. Every clip has alt text and respects reduced motion.
 
-- **Real output** - `zoetty record` runs your commands in a real terminal and keeps their colours.
-- **Small and sharp** - A clip is a few KB of text, crisp at any size.
-- **Works in READMEs** - The SVG is just an image: it plays on GitHub, PyPI and anywhere else that shows one.
-- **Or in your docs** - The HTML fragment drops into any page, with selectable text.
-- **Kept in your repo** - The spec is a short TOML file. When your tool changes, re-record and rebuild.
-- **Checked in CI** - `zoetty check` fails if a clip is out of date.
+[Why zoetty, in more detail](why.md)
 
 ## How it works
 
