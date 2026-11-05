@@ -60,13 +60,29 @@ def name(path: Path) -> str:
     return "zt-" + re.sub(r"[^a-zA-Z0-9]+", "-", path.stem).strip("-").lower()
 
 
+def wrap(segments: list[Segment], cols: int) -> list[list[Segment]]:
+    """Split a line into rows of at most `cols` characters, the way a terminal wraps output."""
+    rows: list[list[Segment]] = [[]]
+    used = 0
+    for segment in segments:
+        text = segment.text
+        while text:
+            if used == cols:
+                rows.append([])
+                used = 0
+            piece, text = text[: cols - used], text[cols - used :]
+            rows[-1].append(Segment(piece, segment.styles, segment.typing, segment.delay))
+            used += len(piece)
+    return rows
+
+
 def _from_runs(clip: Clip) -> tuple[list[Line], float]:
-    steps: list[tuple[float, str, bool]] = []
+    steps: list[tuple[float, list[Segment], bool]] = []
     t = START
     for run in clip.runs:
         typing = min(max(len(run.cmd) / clip.typing_speed, MIN_TYPING), MAX_TYPING)
         prompt = clip.prompt if run.prompt is None else run.prompt
-        steps.append((t, f"{prompt}[type {typing:.2f}]{escape(run.cmd)}[/]", True))
+        steps.append((t, parse(f"{prompt}[type {typing:.2f}]{escape(run.cmd)}[/]"), True))
         t += 0.15 + typing + run.think
         if run.output is not None:
             if not run.output.exists():
@@ -76,11 +92,12 @@ def _from_runs(clip: Clip) -> tuple[list[Line], float]:
             output = run.lines or []
         gap = clip.line_gap if run.line_gap is None else run.line_gap
         for line in output:
-            steps.append((round(t, 3), line, False))
-            t += gap
+            for row in wrap(parse(line), clip.cols):
+                steps.append((round(t, 3), row, False))
+                t += gap
         t += run.pause
     final = clip.prompt if clip.final_prompt is None else clip.final_prompt
-    steps.append((round(t, 3), final, True))
+    steps.append((round(t, 3), parse(final), True))
     duration = clip.duration or round(t + clip.hold, 2)
     return _lines(steps, duration), duration
 
@@ -91,17 +108,17 @@ def _from_steps(clip: Clip) -> tuple[list[Line], float]:
     steps = []
     for step in ordered:
         for index, line in enumerate(step.lines):
-            steps.append((step.at, line, step.caret and index == len(step.lines) - 1))
+            steps.append((step.at, parse(line), step.caret and index == len(step.lines) - 1))
     return _lines(steps, duration), duration
 
 
-def _lines(steps: list[tuple[float, str, bool]], duration: float) -> list[Line]:
-    """Lines from (time, markup, has caret) steps. A caret lasts until the next line appears."""
+def _lines(steps: list[tuple[float, list[Segment], bool]], duration: float) -> list[Line]:
+    """Lines from (time, segments, has caret) steps. A caret lasts until the next line appears."""
     lines = []
-    for index, (at, markup, caret) in enumerate(steps):
+    for index, (at, segments, caret) in enumerate(steps):
         later = [time for time, _, _ in steps[index + 1 :] if time > at]
         until = (later[0] if later else duration) if caret else None
-        lines.append(Line(at, parse(markup), until))
+        lines.append(Line(at, segments, until))
     return lines
 
 

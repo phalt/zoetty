@@ -72,6 +72,7 @@ line_gap = 0.07                                             # optional, override
 - A run has at most one of `output` and `lines`. A run with neither shows no output.
 - `record` runs every run that has `output` (unless `record = false`), in order, in one working folder, and writes the capture to `output`. Runs with `lines` are never executed.
 - `build` fails with a clear message if an `output` file doesn't exist yet ("run `zoetty record` first").
+- Output lines (captured or `lines`) wider than `cols` wrap onto the next row, as in a terminal.
 
 ### Markup
 

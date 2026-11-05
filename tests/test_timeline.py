@@ -136,3 +136,18 @@ def test_percent_and_name():
     assert timeline.percent(20, 10) == "100.000%"
     assert timeline.name(Path("docs/clips/Start API.v2.svg")) == "zt-start-api-v2"
     assert timeline.Line(0, [Segment("ab"), Segment("c")]).columns == 3
+
+
+def test_lines_wider_than_the_terminal_wrap(spec):
+    clip = load(spec('label = "x"\ncols = 4\n[[run]]\ncmd = "x"\nlines = ["ab[green]cdefg[/]h", "abcd"]\n'))
+    lines = timeline.build(clip).lines
+    assert [line.segments for line in lines[1:4]] == [
+        [Segment("ab"), Segment("cd", ("green",))],
+        [Segment("efg", ("green",)), Segment("h")],
+        [Segment("abcd")],
+    ]
+    assert lines[1].at < lines[2].at < lines[3].at
+
+
+def test_wrap_keeps_empty_lines():
+    assert timeline.wrap([], 10) == [[]]
