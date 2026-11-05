@@ -56,7 +56,7 @@ def _render(clip: clips.Clip) -> dict[Path, str]:
 @click.group()
 @click.version_option(VERSION, prog_name="zoetty")
 def cli() -> None:
-    """⚜ zoetty: looping terminal clips as plain SVG or HTML and CSS."""
+    """🎞️ zoetty: looping terminal clips as plain SVG or HTML and CSS."""
 
 
 @cli.command()

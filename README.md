@@ -1,4 +1,4 @@
-# ⚜ zoetty
+# 🎞️ zoetty
 
 ## What is zoetty?
 

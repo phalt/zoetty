@@ -11,7 +11,7 @@ inputs:
     secret: true
 ---
 
-# ⚜ Releasing zoetty
+# 🎞️ Releasing zoetty
 
 zoetty is released with [paulrun](https://github.com/phalt/paulrun), which runs this runbook:
 

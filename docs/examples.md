@@ -1,4 +1,4 @@
-# 🎞️ Examples
+# 🎬 Examples
 
 Every example here is a real spec from [`docs/clips/`](https://github.com/phalt/zoetty/tree/main/docs/clips), built by zoetty. Some are shown as their SVG and some as their HTML fragment: the HTML ones have text you can select.
 

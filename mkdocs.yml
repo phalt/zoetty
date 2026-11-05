@@ -28,14 +28,14 @@ theme:
 repo_name: phalt/zoetty
 repo_url: https://github.com/phalt/zoetty
 nav:
-  - ⚜ Home: index.md
+  - 🎞️ Home: index.md
   - 💡 Why zoetty: why.md
   - 🚀 Install: install.md
   - 📝 Documentation:
     - 📜 Clip format: clip-format.md
     - 📟 Command line: cli.md
     - 🖼️ Embedding clips: embedding.md
-    - 🎞️ Examples: examples.md
+    - 🎬 Examples: examples.md
     - 🤖 Using zoetty with an agent: agents.md
   - 🗒️ Change Log: CHANGELOG.md
 
