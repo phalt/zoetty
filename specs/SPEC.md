@@ -27,7 +27,7 @@ You describe a clip in a TOML file: the commands to show and where their output 
 2. **Specs are TOML** (stdlib `tomllib`), captures are plain files next to the spec, and built files are committed. Everything is a file you own.
 3. **Timing is generated, not recorded.** Commands are typed at a steady speed and output lines appear with a small stagger. Real timing makes boring clips (long pauses, instant dumps). Per-run knobs adjust it.
 4. **No terminal emulation in 0.1.0.** Output is read line by line: colours and styles are kept, cursor movement is dropped, and a carriage return keeps what was last written on that line (enough for simple spinners). Full-screen programs aren't supported.
-5. Same stack and layout as paulrun: Python >= 3.12, Click, rich, hatchling, uv, ruff, ty, pytest, import-linter, mkdocs-material, MIT licence. macOS and Linux only (recording needs a pty).
+5. Same stack and layout as paulrun: Python >= 3.12, Click, rich, hatchling, uv, ruff, ty, pytest, import-linter, Zensical, MIT licence. macOS and Linux only (recording needs a pty).
 
 ## Clip spec format
 
@@ -123,7 +123,7 @@ Modules, top to bottom (enforced with import-linter):
 
 ## Docs
 
-mkdocs-material site on GitHub Pages, dark theme default, with:
+Zensical site on GitHub Pages, dark theme default, with:
 
 - Home: what it is, a live clip, quick start
 - Install
