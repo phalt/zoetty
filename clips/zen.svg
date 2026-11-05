@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="653" height="280" viewBox="0 0 653 280" role="img" aria-label="python -m this printing the Zen of Python, scrolling past the bottom of a ten-row terminal">
+<title>python -m this printing the Zen of Python, scrolling past the bottom of a ten-row terminal</title>
+<style>
+text{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-size:14px;white-space:pre}
+.a{animation-duration:9.23s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.blink{animation:zt-zen-blink 1s step-end infinite}
+@keyframes zt-zen-blink{50%{opacity:0}}
+@keyframes zt-zen-l0{0%{opacity:0}4.334%,100%{opacity:1}}
+@keyframes zt-zen-t0-2{0%,5.959%{transform:translateX(0);animation-timing-function:steps(14,end)}11.376%,100%{transform:translateX(117.6px)}}
+@keyframes zt-zen-k0{0%{opacity:0}4.334%{opacity:1}16.793%,100%{opacity:0}}
+@keyframes zt-zen-l1{0%{opacity:0}16.793%,100%{opacity:1}}
+@keyframes zt-zen-l2{0%{opacity:0}18.743%,100%{opacity:1}}
+@keyframes zt-zen-l3{0%{opacity:0}20.693%,100%{opacity:1}}
+@keyframes zt-zen-l4{0%{opacity:0}22.644%,100%{opacity:1}}
+@keyframes zt-zen-l5{0%{opacity:0}24.594%,100%{opacity:1}}
+@keyframes zt-zen-l6{0%{opacity:0}26.544%,100%{opacity:1}}
+@keyframes zt-zen-l7{0%{opacity:0}28.494%,100%{opacity:1}}
+@keyframes zt-zen-l8{0%{opacity:0}30.444%,100%{opacity:1}}
+@keyframes zt-zen-l9{0%{opacity:0}32.394%,100%{opacity:1}}
+@keyframes zt-zen-l10{0%{opacity:0}34.345%,100%{opacity:1}}
+@keyframes zt-zen-l11{0%{opacity:0}36.295%,100%{opacity:1}}
+@keyframes zt-zen-l12{0%{opacity:0}38.245%,100%{opacity:1}}
+@keyframes zt-zen-l13{0%{opacity:0}40.195%,100%{opacity:1}}
+@keyframes zt-zen-l14{0%{opacity:0}42.145%,100%{opacity:1}}
+@keyframes zt-zen-l15{0%{opacity:0}44.095%,100%{opacity:1}}
+@keyframes zt-zen-l16{0%{opacity:0}46.046%,100%{opacity:1}}
+@keyframes zt-zen-l17{0%{opacity:0}47.996%,100%{opacity:1}}
+@keyframes zt-zen-l18{0%{opacity:0}49.946%,100%{opacity:1}}
+@keyframes zt-zen-l19{0%{opacity:0}51.896%,100%{opacity:1}}
+@keyframes zt-zen-l20{0%{opacity:0}53.846%,100%{opacity:1}}
+@keyframes zt-zen-l21{0%{opacity:0}55.796%,100%{opacity:1}}
+@keyframes zt-zen-l22{0%{opacity:0}67.497%,100%{opacity:1}}
+@keyframes zt-zen-k22{0%{opacity:0}67.497%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-zen-scroll{0%{transform:translateY(0)}34.345%{transform:translateY(-21px)}36.295%{transform:translateY(-42px)}38.245%{transform:translateY(-63px)}40.195%{transform:translateY(-84px)}42.145%{transform:translateY(-105px)}44.095%{transform:translateY(-126px)}46.046%{transform:translateY(-147px)}47.996%{transform:translateY(-168px)}49.946%{transform:translateY(-189px)}51.896%{transform:translateY(-210px)}53.846%{transform:translateY(-231px)}55.796%{transform:translateY(-252px)}67.497%{transform:translateY(-273px)}100%{transform:translateY(-273px)}}
+@keyframes zt-zen-fade{0%{opacity:1}93.499%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.a,.blink{animation:none!important}.cover,.caret{display:none}.scroll{transform:translateY(-273px)}}
+</style>
+<defs><clipPath id="zt-zen-screen"><rect x="0" y="52" width="653" height="210"/></clipPath></defs>
+<rect width="653" height="280" rx="10" fill="#282c34"/>
+<path d="M0 10a10 10 0 0 1 10-10h633a10 10 0 0 1 10 10v24h-653z" fill="#21252b"/><circle cx="18" cy="17.0" r="5.5" fill="#abb2bf" opacity=".3"/><circle cx="36" cy="17.0" r="5.5" fill="#abb2bf" opacity=".3"/><circle cx="54" cy="17.0" r="5.5" fill="#abb2bf" opacity=".3"/><text x="326.5" y="22.0" text-anchor="middle" opacity=".5" fill="#abb2bf" style="font-size:13px">python -m this</text>
+<g clip-path="url(#zt-zen-screen)" fill="#abb2bf"><g class="a" style="animation-name:zt-zen-fade"><g class="a scroll" style="animation-name:zt-zen-scroll">
+<g class="a" style="animation-name:zt-zen-l0"><text x="24.0" y="67.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="67.8" textLength="117.6" lengthAdjust="spacingAndGlyphs">python -m this</text>
+<g class="a cover" style="animation-name:zt-zen-t0-2"><rect x="40.8" y="52.0" width="126.0" height="21" fill="#282c34"/></g>
+</g>
+<g class="a caret" style="animation-name:zt-zen-k0"><g class="a" style="animation-name:zt-zen-t0-2"><rect class="blink" x="40.8" y="54.0" width="8.4" height="17" fill="#abb2bf"/></g></g>
+<g class="a" style="animation-name:zt-zen-l1"><text x="24.0" y="88.8" textLength="268.8" lengthAdjust="spacingAndGlyphs">The Zen of Python, by Tim Peters</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l2">
+</g>
+<g class="a" style="animation-name:zt-zen-l3"><text x="24.0" y="130.8" textLength="252.0" lengthAdjust="spacingAndGlyphs">Beautiful is better than ugly.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l4"><text x="24.0" y="151.8" textLength="277.2" lengthAdjust="spacingAndGlyphs">Explicit is better than implicit.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l5"><text x="24.0" y="172.8" textLength="252.0" lengthAdjust="spacingAndGlyphs">Simple is better than complex.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l6"><text x="24.0" y="193.8" textLength="294.0" lengthAdjust="spacingAndGlyphs">Complex is better than complicated.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l7"><text x="24.0" y="214.8" textLength="226.8" lengthAdjust="spacingAndGlyphs">Flat is better than nested.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l8"><text x="24.0" y="235.8" textLength="235.2" lengthAdjust="spacingAndGlyphs">Sparse is better than dense.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l9"><text x="24.0" y="256.8" textLength="159.6" lengthAdjust="spacingAndGlyphs">Readability counts.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l10"><text x="24.0" y="277.8" textLength="462.0" lengthAdjust="spacingAndGlyphs">Special cases aren&#x27;t special enough to break the rules.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l11"><text x="24.0" y="298.8" textLength="294.0" lengthAdjust="spacingAndGlyphs">Although practicality beats purity.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l12"><text x="24.0" y="319.8" textLength="285.6" lengthAdjust="spacingAndGlyphs">Errors should never pass silently.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l13"><text x="24.0" y="340.8" textLength="226.8" lengthAdjust="spacingAndGlyphs">Unless explicitly silenced.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l14"><text x="24.0" y="361.8" textLength="478.8" lengthAdjust="spacingAndGlyphs">In the face of ambiguity, refuse the temptation to guess.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l15"><text x="24.0" y="382.8" textLength="579.6" lengthAdjust="spacingAndGlyphs">There should be one-- and preferably only one --obvious way to do it.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l16"><text x="24.0" y="403.8" textLength="554.4" lengthAdjust="spacingAndGlyphs">Although that way may not be obvious at first unless you&#x27;re Dutch.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l17"><text x="24.0" y="424.8" textLength="210.0" lengthAdjust="spacingAndGlyphs">Now is better than never.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l18"><text x="24.0" y="445.8" textLength="403.2" lengthAdjust="spacingAndGlyphs">Although never is often better than *right* now.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l19"><text x="24.0" y="466.8" textLength="487.2" lengthAdjust="spacingAndGlyphs">If the implementation is hard to explain, it&#x27;s a bad idea.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l20"><text x="24.0" y="487.8" textLength="537.6" lengthAdjust="spacingAndGlyphs">If the implementation is easy to explain, it may be a good idea.</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l21"><text x="24.0" y="508.8" textLength="537.6" lengthAdjust="spacingAndGlyphs">Namespaces are one honking great idea -- let&#x27;s do more of those!</text>
+</g>
+<g class="a" style="animation-name:zt-zen-l22"><text x="24.0" y="529.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text>
+</g>
+<g class="a caret" style="animation-name:zt-zen-k22"><g><rect class="blink" x="40.8" y="516.0" width="8.4" height="17" fill="#abb2bf"/></g></g>
+</g></g></g>
+</svg>

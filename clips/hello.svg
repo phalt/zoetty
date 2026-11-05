@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="552" height="175" viewBox="0 0 552 175" role="img" aria-label="Typing two commands in a terminal: echo prints a greeting, ls lists three files">
+<title>Typing two commands in a terminal: echo prints a greeting, ls lists three files</title>
+<style>
+text{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-size:14px;white-space:pre}
+.a{animation-duration:8.93s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.blink{animation:zt-hello-blink 1s step-end infinite}
+@keyframes zt-hello-blink{50%{opacity:0}}
+@keyframes zt-hello-l0{0%{opacity:0}4.479%,100%{opacity:1}}
+@keyframes zt-hello-t0-2{0%,6.159%{transform:translateX(0);animation-timing-function:steps(25,end)}16.125%,100%{transform:translateX(210.0px)}}
+@keyframes zt-hello-k0{0%{opacity:0}4.479%{opacity:1}21.758%,100%{opacity:0}}
+@keyframes zt-hello-l1{0%{opacity:0}21.758%,100%{opacity:1}}
+@keyframes zt-hello-l2{0%{opacity:0}32.619%,100%{opacity:1}}
+@keyframes zt-hello-t2-2{0%,34.299%{transform:translateX(0);animation-timing-function:steps(2,end)}38.778%,100%{transform:translateX(16.8px)}}
+@keyframes zt-hello-k2{0%{opacity:0}32.619%{opacity:1}44.378%,100%{opacity:0}}
+@keyframes zt-hello-l3{0%{opacity:0}44.378%,100%{opacity:1}}
+@keyframes zt-hello-l4{0%{opacity:0}55.241%,100%{opacity:1}}
+@keyframes zt-hello-k4{0%{opacity:0}55.241%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-hello-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0px)}}
+@keyframes zt-hello-fade{0%{opacity:1}93.281%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.a,.blink{animation:none!important}.cover,.caret{display:none}.scroll{transform:translateY(-0px)}}
+</style>
+<defs><clipPath id="zt-hello-screen"><rect x="0" y="52" width="552" height="105"/></clipPath></defs>
+<rect width="552" height="175" rx="10" fill="#1c1c1c"/>
+<path d="M0 10a10 10 0 0 1 10-10h532a10 10 0 0 1 10 10v24h-552z" fill="#2a2a2a"/><circle cx="18" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><circle cx="36" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><circle cx="54" cy="17.0" r="5.5" fill="#d0d0d0" opacity=".3"/><text x="276.0" y="22.0" text-anchor="middle" opacity=".5" fill="#d0d0d0" style="font-size:13px">~/my-project</text>
+<g clip-path="url(#zt-hello-screen)" fill="#d0d0d0"><g class="a" style="animation-name:zt-hello-fade"><g class="a scroll" style="animation-name:zt-hello-scroll">
+<g class="a" style="animation-name:zt-hello-l0"><text x="24.0" y="67.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="67.8" textLength="210.0" lengthAdjust="spacingAndGlyphs">echo &#x27;Hello from zoetty!&#x27;</text>
+<g class="a cover" style="animation-name:zt-hello-t0-2"><rect x="40.8" y="52.0" width="218.4" height="21" fill="#1c1c1c"/></g>
+</g>
+<g class="a caret" style="animation-name:zt-hello-k0"><g class="a" style="animation-name:zt-hello-t0-2"><rect class="blink" x="40.8" y="54.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+<g class="a" style="animation-name:zt-hello-l1"><text x="24.0" y="88.8" textLength="151.2" lengthAdjust="spacingAndGlyphs">Hello from zoetty!</text>
+</g>
+<g class="a" style="animation-name:zt-hello-l2"><text x="24.0" y="109.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="109.8" textLength="16.8" lengthAdjust="spacingAndGlyphs">ls</text>
+<g class="a cover" style="animation-name:zt-hello-t2-2"><rect x="40.8" y="94.0" width="25.2" height="21" fill="#1c1c1c"/></g>
+</g>
+<g class="a caret" style="animation-name:zt-hello-k2"><g class="a" style="animation-name:zt-hello-t2-2"><rect class="blink" x="40.8" y="96.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+<g class="a" style="animation-name:zt-hello-l3"><text x="24.0" y="130.8" textLength="33.6" lengthAdjust="spacingAndGlyphs" fill="#4b8fe3">docs</text><text x="74.4" y="130.8" textLength="75.6" lengthAdjust="spacingAndGlyphs">README.md</text><text x="166.8" y="130.8" textLength="58.8" lengthAdjust="spacingAndGlyphs" fill="#2fcf7a">tool.py</text>
+</g>
+<g class="a" style="animation-name:zt-hello-l4"><text x="24.0" y="151.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text>
+</g>
+<g class="a caret" style="animation-name:zt-hello-k4"><g><rect class="blink" x="40.8" y="138.0" width="8.4" height="17" fill="#d0d0d0"/></g></g>
+</g></g></g>
+</svg>

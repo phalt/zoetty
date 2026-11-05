@@ -1,0 +1,20 @@
+# An interactive program: `input` is typed into it while recording,
+# one line each time it goes quiet, so answers land after their prompts.
+title = "python"
+label = "A Python REPL importing zoetty's markup parser and parsing some styled text"
+cols = 64
+out = ["repl.svg", "repl.html"]
+
+[record]
+env = { PYTHON_BASIC_REPL = "1" }
+
+[[run]]
+cmd = "python -q"
+output = "captures/repl.ansi"
+input = """
+from zoetty.markup import parse, plain
+plain(parse("[bold]zoe[/]tty"))
+[s.styles for s in parse("[bold green]ok[/] done")]
+"""
+pause = 0.2
+

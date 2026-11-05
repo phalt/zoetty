@@ -1,0 +1,1269 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://phalt.github.io/zoetty/examples/">
+      
+      
+        <link rel="prev" href="../embedding/">
+      
+      
+        <link rel="next" href="../agents/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>🎞️ Examples - zoetty</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="zoetty" class="md-header__button md-logo" aria-label="zoetty" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            zoetty
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🎞️ Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/phalt/zoetty" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    phalt/zoetty
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ⚜ Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../install/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🚀 Install
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../clip-format/" class="md-tabs__link">
+          
+  
+  
+  📝 Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CHANGELOG/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🗒️ Change Log
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="zoetty" class="md-nav__button md-logo" aria-label="zoetty" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    zoetty
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/phalt/zoetty" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    phalt/zoetty
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚜ Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📝 Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clip-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📜 Clip format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📟 Command line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embedding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🖼️ Embedding clips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎞️ Examples
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎞️ Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hello-output-written-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hello: output written by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-recording-real-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start: recording real output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-repl-typing-into-an-interactive-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A REPL: typing into an interactive program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrolling-and-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrolling and themes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hand-timed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hand-timed steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-wild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the wild
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Using zoetty with an agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗒️ Change Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hello-output-written-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hello: output written by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-recording-real-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start: recording real output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-repl-typing-into-an-interactive-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A REPL: typing into an interactive program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrolling-and-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrolling and themes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hand-timed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hand-timed steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-the-wild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the wild
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="examples">🎞️ Examples</h1>
+<p>Every example here is a real spec from <a href="https://github.com/phalt/zoetty/tree/main/docs/clips"><code>docs/clips/</code></a>, built by zoetty. Some are shown as their SVG and some as their HTML fragment: the HTML ones have text you can select.</p>
+<h2 id="hello-output-written-by-hand">Hello: output written by hand</h2>
+<p>The smallest useful clip. Nothing is recorded: each run's <code>lines</code> say what it printed, using <a href="../clip-format/#markup">markup</a> for colour.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># The smallest useful clip: two commands, with their output written by hand.</span>
+<span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~/my-project"</span>
+<span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Typing two commands in a terminal: echo prints a greeting, ls lists three files"</span>
+<span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span>
+<span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"hello.svg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hello.html"</span><span class="p">]</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"echo 'Hello from zoetty!'"</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"Hello from zoetty!"</span><span class="p">]</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ls"</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"[blue]docs[/]  README.md  [green]tool.py[/]"</span><span class="p">]</span>
+</code></pre></div>
+<p>As an SVG:</p>
+<p><img alt="Typing two commands in a terminal: echo prints a greeting, ls lists three files" src="../clips/hello.svg" /></p>
+<p>And the same spec as an HTML fragment:</p>
+<div class="zt-hello" role="img" aria-label="Typing two commands in a terminal: echo prints a greeting, ls lists three files">
+<div class="zt-hello-bar"><span></span><span></span><span></span><b>~/my-project</b></div>
+<div class="zt-hello-screen" style="animation-name:zt-hello-fade"><div class="zt-hello-view"><div class="zt-hello-body" style="animation-name:zt-hello-scroll"><div class="zt-hello-ln" style="animation-name:zt-hello-l0"><span class="zt-hello-dim">$</span> <span class="zt-hello-type " style="animation-name:zt-hello-t0-2">echo &#x27;Hello from zoetty!&#x27;</span><span class="zt-hello-caret" style="animation-name:zt-hello-k0"><i></i></span></div><div class="zt-hello-ln" style="animation-name:zt-hello-l1">Hello from zoetty!</div><div class="zt-hello-ln" style="animation-name:zt-hello-l2"><span class="zt-hello-dim">$</span> <span class="zt-hello-type " style="animation-name:zt-hello-t2-2">ls</span><span class="zt-hello-caret" style="animation-name:zt-hello-k2"><i></i></span></div><div class="zt-hello-ln" style="animation-name:zt-hello-l3"><span class="zt-hello-blue">docs</span>  README.md  <span class="zt-hello-green">tool.py</span></div><div class="zt-hello-ln" style="animation-name:zt-hello-l4"><span class="zt-hello-dim">$</span> <span class="zt-hello-caret" style="animation-name:zt-hello-k4"><i></i></span></div></div></div></div>
+</div>
+<style>
+.zt-hello{--bg:#1c1c1c;--fg:#d0d0d0;--bar:#2a2a2a;--blue:#4b8fe3;--green:#2fcf7a;--yellow:#e6e04a;--red:#e05252;--cyan:#4fc6d6;--magenta:#c678dd;font:clamp(9px,1.6vw,14px)/1.5 ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc(60ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}
+.zt-hello-bar{display:flex;align-items:center;gap:.45em;padding:.6em .9em;background:var(--bar)}
+.zt-hello-bar span{width:.8em;height:.8em;border-radius:50%;background:var(--fg);opacity:.3}
+.zt-hello-bar b{flex:1;text-align:center;font-weight:400;opacity:.5;margin-right:3em}
+.zt-hello-screen{padding:1em 1.5em 1.2em}
+.zt-hello-view{height:7.5em;overflow:hidden}
+.zt-hello-screen,.zt-hello-body,.zt-hello-ln,.zt-hello-type,.zt-hello-caret{animation-duration:8.93s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.zt-hello-ln{white-space:pre;opacity:0}
+.zt-hello-type{display:inline-block;vertical-align:bottom;overflow:hidden;width:0}
+.zt-hello-caret{opacity:0}
+.zt-hello-caret i{display:inline-block;width:.6em;height:1.15em;vertical-align:-.2em;background:var(--fg);animation:zt-hello-blink 1s step-end infinite}
+@keyframes zt-hello-blink{50%{opacity:0}}
+.zt-hello-dim{opacity:.55}.zt-hello-bold{font-weight:700}.zt-hello-italic{font-style:italic}.zt-hello-blue{color:var(--blue)}.zt-hello-green{color:var(--green)}.zt-hello-yellow{color:var(--yellow)}.zt-hello-red{color:var(--red)}.zt-hello-cyan{color:var(--cyan)}.zt-hello-magenta{color:var(--magenta)}
+@keyframes zt-hello-l0{0%{opacity:0}4.479%,100%{opacity:1}}
+@keyframes zt-hello-t0-2{0%,6.159%{width:0;animation-timing-function:steps(25,end)}16.125%,100%{width:25ch}}
+@keyframes zt-hello-k0{0%{opacity:0}4.479%{opacity:1}21.758%,100%{opacity:0}}
+@keyframes zt-hello-l1{0%{opacity:0}21.758%,100%{opacity:1}}
+@keyframes zt-hello-l2{0%{opacity:0}32.619%,100%{opacity:1}}
+@keyframes zt-hello-t2-2{0%,34.299%{width:0;animation-timing-function:steps(2,end)}38.778%,100%{width:2ch}}
+@keyframes zt-hello-k2{0%{opacity:0}32.619%{opacity:1}44.378%,100%{opacity:0}}
+@keyframes zt-hello-l3{0%{opacity:0}44.378%,100%{opacity:1}}
+@keyframes zt-hello-l4{0%{opacity:0}55.241%,100%{opacity:1}}
+@keyframes zt-hello-k4{0%{opacity:0}55.241%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-hello-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0em)}}
+@keyframes zt-hello-fade{0%{opacity:1}93.281%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.zt-hello *{animation:none!important}.zt-hello-ln{opacity:1}.zt-hello-type{width:auto}.zt-hello-caret{display:none}.zt-hello-body{transform:translateY(-0em)}}
+</style>
+
+<h2 id="quick-start-recording-real-output">Quick start: recording real output</h2>
+<p>zoetty recording itself. Each run has an <code>output</code> file, so <code>zoetty record</code> runs it for real and keeps its colours. <code>[record]</code> runs the commands in a scratch folder, and <code>setup</code> empties it first, so the clip is the same every time it's recorded. <code>exec</code> is what actually runs; <code>cmd</code> is what's shown.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># zoetty recording itself: init a clip, build it, check it.</span>
+<span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~/my-project"</span>
+<span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zoetty init writes a starter clip spec, zoetty build renders it to SVG, and zoetty check confirms it is up to date"</span>
+<span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">72</span>
+<span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"quickstart.svg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"quickstart.html"</span><span class="p">]</span>
+
+<span class="k">[record]</span>
+<span class="n">cwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/tmp"</span>
+<span class="n">setup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"rm -rf zoetty-quickstart"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mkdir zoetty-quickstart"</span><span class="p">]</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zoetty init clips/hello.toml"</span>
+<span class="n">exec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cd zoetty-quickstart &amp;&amp; zoetty init clips/hello.toml"</span>
+<span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"captures/quickstart-init.ansi"</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zoetty build clips/hello.toml"</span>
+<span class="n">exec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cd zoetty-quickstart &amp;&amp; zoetty build clips/hello.toml"</span>
+<span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"captures/quickstart-build.ansi"</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zoetty check clips/hello.toml"</span>
+<span class="n">exec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cd zoetty-quickstart &amp;&amp; zoetty check clips/hello.toml"</span>
+<span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"captures/quickstart-check.ansi"</span>
+</code></pre></div>
+<div class="zt-quickstart" role="img" aria-label="zoetty init writes a starter clip spec, zoetty build renders it to SVG, and zoetty check confirms it is up to date">
+<div class="zt-quickstart-bar"><span></span><span></span><span></span><b>~/my-project</b></div>
+<div class="zt-quickstart-screen" style="animation-name:zt-quickstart-fade"><div class="zt-quickstart-view"><div class="zt-quickstart-body" style="animation-name:zt-quickstart-scroll"><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l0"><span class="zt-quickstart-dim">$</span> <span class="zt-quickstart-type " style="animation-name:zt-quickstart-t0-2">zoetty init clips/hello.toml</span><span class="zt-quickstart-caret" style="animation-name:zt-quickstart-k0"><i></i></span></div><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l1"><span class="zt-quickstart-green">✓</span> wrote clips/hello.toml</div><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l2">  next: <span class="zt-quickstart-bold">zoetty build clips/hello.toml</span></div><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l3"><span class="zt-quickstart-dim">$</span> <span class="zt-quickstart-type " style="animation-name:zt-quickstart-t3-2">zoetty build clips/hello.toml</span><span class="zt-quickstart-caret" style="animation-name:zt-quickstart-k3"><i></i></span></div><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l4"><span class="zt-quickstart-green">✓</span> clips/hello.svg <span class="zt-quickstart-dim">(4.2KB)</span></div><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l5"><span class="zt-quickstart-dim">$</span> <span class="zt-quickstart-type " style="animation-name:zt-quickstart-t5-2">zoetty check clips/hello.toml</span><span class="zt-quickstart-caret" style="animation-name:zt-quickstart-k5"><i></i></span></div><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l6"><span class="zt-quickstart-green">✓</span> clips/hello.toml</div><div class="zt-quickstart-ln" style="animation-name:zt-quickstart-l7"><span class="zt-quickstart-dim">$</span> <span class="zt-quickstart-caret" style="animation-name:zt-quickstart-k7"><i></i></span></div></div></div></div>
+</div>
+<style>
+.zt-quickstart{--bg:#1c1c1c;--fg:#d0d0d0;--bar:#2a2a2a;--blue:#4b8fe3;--green:#2fcf7a;--yellow:#e6e04a;--red:#e05252;--cyan:#4fc6d6;--magenta:#c678dd;font:clamp(9px,1.6vw,14px)/1.5 ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc(72ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}
+.zt-quickstart-bar{display:flex;align-items:center;gap:.45em;padding:.6em .9em;background:var(--bar)}
+.zt-quickstart-bar span{width:.8em;height:.8em;border-radius:50%;background:var(--fg);opacity:.3}
+.zt-quickstart-bar b{flex:1;text-align:center;font-weight:400;opacity:.5;margin-right:3em}
+.zt-quickstart-screen{padding:1em 1.5em 1.2em}
+.zt-quickstart-view{height:12em;overflow:hidden}
+.zt-quickstart-screen,.zt-quickstart-body,.zt-quickstart-ln,.zt-quickstart-type,.zt-quickstart-caret{animation-duration:12.4s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.zt-quickstart-ln{white-space:pre;opacity:0}
+.zt-quickstart-type{display:inline-block;vertical-align:bottom;overflow:hidden;width:0}
+.zt-quickstart-caret{opacity:0}
+.zt-quickstart-caret i{display:inline-block;width:.6em;height:1.15em;vertical-align:-.2em;background:var(--fg);animation:zt-quickstart-blink 1s step-end infinite}
+@keyframes zt-quickstart-blink{50%{opacity:0}}
+.zt-quickstart-dim{opacity:.55}.zt-quickstart-bold{font-weight:700}.zt-quickstart-italic{font-style:italic}.zt-quickstart-blue{color:var(--blue)}.zt-quickstart-green{color:var(--green)}.zt-quickstart-yellow{color:var(--yellow)}.zt-quickstart-red{color:var(--red)}.zt-quickstart-cyan{color:var(--cyan)}.zt-quickstart-magenta{color:var(--magenta)}
+@keyframes zt-quickstart-l0{0%{opacity:0}3.226%,100%{opacity:1}}
+@keyframes zt-quickstart-t0-2{0%,4.435%{width:0;animation-timing-function:steps(28,end)}12.500%,100%{width:28ch}}
+@keyframes zt-quickstart-k0{0%{opacity:0}3.226%{opacity:1}16.532%,100%{opacity:0}}
+@keyframes zt-quickstart-l1{0%{opacity:0}16.532%,100%{opacity:1}}
+@keyframes zt-quickstart-l2{0%{opacity:0}17.097%,100%{opacity:1}}
+@keyframes zt-quickstart-l3{0%{opacity:0}24.919%,100%{opacity:1}}
+@keyframes zt-quickstart-t3-2{0%,26.129%{width:0;animation-timing-function:steps(29,end)}34.516%,100%{width:29ch}}
+@keyframes zt-quickstart-k3{0%{opacity:0}24.919%{opacity:1}38.516%,100%{opacity:0}}
+@keyframes zt-quickstart-l4{0%{opacity:0}38.516%,100%{opacity:1}}
+@keyframes zt-quickstart-l5{0%{opacity:0}46.336%,100%{opacity:1}}
+@keyframes zt-quickstart-t5-2{0%,47.546%{width:0;animation-timing-function:steps(29,end)}55.933%,100%{width:29ch}}
+@keyframes zt-quickstart-k5{0%{opacity:0}46.336%{opacity:1}59.927%,100%{opacity:0}}
+@keyframes zt-quickstart-l6{0%{opacity:0}59.927%,100%{opacity:1}}
+@keyframes zt-quickstart-l7{0%{opacity:0}67.750%,100%{opacity:1}}
+@keyframes zt-quickstart-k7{0%{opacity:0}67.750%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-quickstart-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0em)}}
+@keyframes zt-quickstart-fade{0%{opacity:1}95.161%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.zt-quickstart *{animation:none!important}.zt-quickstart-ln{opacity:1}.zt-quickstart-type{width:auto}.zt-quickstart-caret{display:none}.zt-quickstart-body{transform:translateY(-0em)}}
+</style>
+
+<h2 id="a-repl-typing-into-an-interactive-program">A REPL: typing into an interactive program</h2>
+<p><code>input</code> is typed into the program while it's recorded, one line each time it goes quiet, so every line lands after the prompt that asked for it. After the last line zoetty sends Ctrl-D, which ends the REPL and brings back the shell prompt. <code>env</code> turns on Python's plain REPL, which doesn't redraw the line as you type.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># An interactive program: `input` is typed into it while recording,</span>
+<span class="c1"># one line each time it goes quiet, so answers land after their prompts.</span>
+<span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"python"</span>
+<span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"A Python REPL importing zoetty's markup parser and parsing some styled text"</span>
+<span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">64</span>
+<span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"repl.svg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"repl.html"</span><span class="p">]</span>
+
+<span class="k">[record]</span>
+<span class="n">env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">PYTHON_BASIC_REPL</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"1"</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"python -q"</span>
+<span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"captures/repl.ansi"</span>
+<span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"""</span>
+<span class="s2">from zoetty.markup import parse, plain</span>
+<span class="s2">plain(parse("[bold]zoe[/]tty"))</span>
+<span class="s2">[s.styles for s in parse("[bold green]ok[/] done")]</span>
+<span class="s2">"""</span>
+<span class="n">pause</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span>
+</code></pre></div>
+<p><img alt="A Python REPL importing zoetty's markup parser and parsing some styled text" src="../clips/repl.svg" /></p>
+<h2 id="scrolling-and-themes">Scrolling and themes</h2>
+<p><code>rows</code> sets how much of the terminal is visible: past that, output scrolls up line by line. <code>line_gap</code> slows the output down so it can be read, and <code>[theme]</code> recolours the window, here to One Dark.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Long output scrolls once it passes `rows`, and [theme] recolours the window.</span>
+<span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"python -m this"</span>
+<span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"python -m this printing the Zen of Python, scrolling past the bottom of a ten-row terminal"</span>
+<span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">72</span>
+<span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="n">line_gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.18</span>
+<span class="n">hold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"zen.svg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"zen.html"</span><span class="p">]</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"python -m this"</span>
+<span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"captures/zen.ansi"</span>
+
+<span class="k">[theme]</span>
+<span class="n">bg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#282c34"</span>
+<span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#21252b"</span>
+<span class="n">fg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#abb2bf"</span>
+<span class="n">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#61afef"</span>
+<span class="n">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#98c379"</span>
+<span class="n">yellow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#e5c07b"</span>
+<span class="n">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#e06c75"</span>
+<span class="n">cyan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#56b6c2"</span>
+<span class="n">magenta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#c678dd"</span>
+</code></pre></div>
+<div class="zt-zen" role="img" aria-label="python -m this printing the Zen of Python, scrolling past the bottom of a ten-row terminal">
+<div class="zt-zen-bar"><span></span><span></span><span></span><b>python -m this</b></div>
+<div class="zt-zen-screen" style="animation-name:zt-zen-fade"><div class="zt-zen-view"><div class="zt-zen-body" style="animation-name:zt-zen-scroll"><div class="zt-zen-ln" style="animation-name:zt-zen-l0"><span class="zt-zen-dim">$</span> <span class="zt-zen-type " style="animation-name:zt-zen-t0-2">python -m this</span><span class="zt-zen-caret" style="animation-name:zt-zen-k0"><i></i></span></div><div class="zt-zen-ln" style="animation-name:zt-zen-l1">The Zen of Python, by Tim Peters</div><div class="zt-zen-ln" style="animation-name:zt-zen-l2">&nbsp;</div><div class="zt-zen-ln" style="animation-name:zt-zen-l3">Beautiful is better than ugly.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l4">Explicit is better than implicit.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l5">Simple is better than complex.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l6">Complex is better than complicated.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l7">Flat is better than nested.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l8">Sparse is better than dense.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l9">Readability counts.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l10">Special cases aren&#x27;t special enough to break the rules.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l11">Although practicality beats purity.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l12">Errors should never pass silently.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l13">Unless explicitly silenced.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l14">In the face of ambiguity, refuse the temptation to guess.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l15">There should be one-- and preferably only one --obvious way to do it.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l16">Although that way may not be obvious at first unless you&#x27;re Dutch.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l17">Now is better than never.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l18">Although never is often better than *right* now.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l19">If the implementation is hard to explain, it&#x27;s a bad idea.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l20">If the implementation is easy to explain, it may be a good idea.</div><div class="zt-zen-ln" style="animation-name:zt-zen-l21">Namespaces are one honking great idea -- let&#x27;s do more of those!</div><div class="zt-zen-ln" style="animation-name:zt-zen-l22"><span class="zt-zen-dim">$</span> <span class="zt-zen-caret" style="animation-name:zt-zen-k22"><i></i></span></div></div></div></div>
+</div>
+<style>
+.zt-zen{--bg:#282c34;--fg:#abb2bf;--bar:#21252b;--blue:#61afef;--green:#98c379;--yellow:#e5c07b;--red:#e06c75;--cyan:#56b6c2;--magenta:#c678dd;font:clamp(9px,1.6vw,14px)/1.5 ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc(72ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}
+.zt-zen-bar{display:flex;align-items:center;gap:.45em;padding:.6em .9em;background:var(--bar)}
+.zt-zen-bar span{width:.8em;height:.8em;border-radius:50%;background:var(--fg);opacity:.3}
+.zt-zen-bar b{flex:1;text-align:center;font-weight:400;opacity:.5;margin-right:3em}
+.zt-zen-screen{padding:1em 1.5em 1.2em}
+.zt-zen-view{height:15em;overflow:hidden}
+.zt-zen-screen,.zt-zen-body,.zt-zen-ln,.zt-zen-type,.zt-zen-caret{animation-duration:9.23s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.zt-zen-ln{white-space:pre;opacity:0}
+.zt-zen-type{display:inline-block;vertical-align:bottom;overflow:hidden;width:0}
+.zt-zen-caret{opacity:0}
+.zt-zen-caret i{display:inline-block;width:.6em;height:1.15em;vertical-align:-.2em;background:var(--fg);animation:zt-zen-blink 1s step-end infinite}
+@keyframes zt-zen-blink{50%{opacity:0}}
+.zt-zen-dim{opacity:.55}.zt-zen-bold{font-weight:700}.zt-zen-italic{font-style:italic}.zt-zen-blue{color:var(--blue)}.zt-zen-green{color:var(--green)}.zt-zen-yellow{color:var(--yellow)}.zt-zen-red{color:var(--red)}.zt-zen-cyan{color:var(--cyan)}.zt-zen-magenta{color:var(--magenta)}
+@keyframes zt-zen-l0{0%{opacity:0}4.334%,100%{opacity:1}}
+@keyframes zt-zen-t0-2{0%,5.959%{width:0;animation-timing-function:steps(14,end)}11.376%,100%{width:14ch}}
+@keyframes zt-zen-k0{0%{opacity:0}4.334%{opacity:1}16.793%,100%{opacity:0}}
+@keyframes zt-zen-l1{0%{opacity:0}16.793%,100%{opacity:1}}
+@keyframes zt-zen-l2{0%{opacity:0}18.743%,100%{opacity:1}}
+@keyframes zt-zen-l3{0%{opacity:0}20.693%,100%{opacity:1}}
+@keyframes zt-zen-l4{0%{opacity:0}22.644%,100%{opacity:1}}
+@keyframes zt-zen-l5{0%{opacity:0}24.594%,100%{opacity:1}}
+@keyframes zt-zen-l6{0%{opacity:0}26.544%,100%{opacity:1}}
+@keyframes zt-zen-l7{0%{opacity:0}28.494%,100%{opacity:1}}
+@keyframes zt-zen-l8{0%{opacity:0}30.444%,100%{opacity:1}}
+@keyframes zt-zen-l9{0%{opacity:0}32.394%,100%{opacity:1}}
+@keyframes zt-zen-l10{0%{opacity:0}34.345%,100%{opacity:1}}
+@keyframes zt-zen-l11{0%{opacity:0}36.295%,100%{opacity:1}}
+@keyframes zt-zen-l12{0%{opacity:0}38.245%,100%{opacity:1}}
+@keyframes zt-zen-l13{0%{opacity:0}40.195%,100%{opacity:1}}
+@keyframes zt-zen-l14{0%{opacity:0}42.145%,100%{opacity:1}}
+@keyframes zt-zen-l15{0%{opacity:0}44.095%,100%{opacity:1}}
+@keyframes zt-zen-l16{0%{opacity:0}46.046%,100%{opacity:1}}
+@keyframes zt-zen-l17{0%{opacity:0}47.996%,100%{opacity:1}}
+@keyframes zt-zen-l18{0%{opacity:0}49.946%,100%{opacity:1}}
+@keyframes zt-zen-l19{0%{opacity:0}51.896%,100%{opacity:1}}
+@keyframes zt-zen-l20{0%{opacity:0}53.846%,100%{opacity:1}}
+@keyframes zt-zen-l21{0%{opacity:0}55.796%,100%{opacity:1}}
+@keyframes zt-zen-l22{0%{opacity:0}67.497%,100%{opacity:1}}
+@keyframes zt-zen-k22{0%{opacity:0}67.497%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-zen-scroll{0%{transform:translateY(0)}34.345%{transform:translateY(-1.5em)}36.295%{transform:translateY(-3em)}38.245%{transform:translateY(-4.5em)}40.195%{transform:translateY(-6em)}42.145%{transform:translateY(-7.5em)}44.095%{transform:translateY(-9em)}46.046%{transform:translateY(-10.5em)}47.996%{transform:translateY(-12em)}49.946%{transform:translateY(-13.5em)}51.896%{transform:translateY(-15em)}53.846%{transform:translateY(-16.5em)}55.796%{transform:translateY(-18em)}67.497%{transform:translateY(-19.5em)}100%{transform:translateY(-19.5em)}}
+@keyframes zt-zen-fade{0%{opacity:1}93.499%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.zt-zen *{animation:none!important}.zt-zen-ln{opacity:1}.zt-zen-type{width:auto}.zt-zen-caret{display:none}.zt-zen-body{transform:translateY(-19.5em)}}
+</style>
+
+<h2 id="hand-timed-steps">Hand-timed steps</h2>
+<p>For clips that aren't a series of commands, <code>[[step]]</code> entries say exactly when each line appears and <code>[type ...]</code> types text out. This one re-enacts a <a href="https://github.com/phalt/paulrun">paulrun</a> session and is the clip on paulrun's README.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># A hand-timed clip: [[step]] entries say exactly when each line appears.</span>
+<span class="c1"># This is the clip on the paulrun README, re-enacting `paulrun hello.md`.</span>
+<span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~/hello"</span>
+<span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"paulrun checking and running hello.md: it asks for NAME, shows the plan, runs a shell step and a Python step, and finishes ok"</span>
+<span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span>
+<span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"steps.svg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"steps.html"</span><span class="p">]</span>
+<span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">56</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.4</span>
+<span class="n">caret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"[dim]$[/] [type 1.3]paulrun check hello.md[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.2</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"[green]hello.md: ok[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.8</span>
+<span class="n">caret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"[dim]$[/] [type 0.9]paulrun hello.md[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.2</span>
+<span class="n">caret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"NAME [dim](Who to say hello to)[/]: [type 0.5 0.4]Paul[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">"[blue]╭─ [/][bold blue]Say hello[/][blue] ─────────────────────╮[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[blue]│[/] [dim]directory[/]  /home/you/hello      [blue]│[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[blue]│[/] [dim]inputs[/]     NAME=Paul            [blue]│[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[blue]│[/] [dim]steps[/]      1. Greet             [blue]│[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[blue]│[/]            2. Count the letters [blue]│[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[blue]│[/] [dim]blocks[/]     2 run blocks         [blue]│[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[blue]╰─────────────────────────────────╯[/]"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.1</span>
+<span class="n">caret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"Start? </span><span class="se">\\</span><span class="s2">[y/N] [type 0.05 0.8]y[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.4</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"[bold blue]1/2  Greet[/] [blue]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.7</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"  [dim italic]Saying hello to Paul.[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.0</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"  [dim]┌ [/][bold]sh[/][dim] · 10:02:13.482[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.4</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"  [dim]│[/] Hello, Paul!"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.7</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"  [dim]└ [/][green]✓ exit 0[/][dim] · 0.0s[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.2</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[bold blue]2/2  Count the letters[/] [blue]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"  [dim]┌ [/][bold]python[/][dim] · 10:02:13.483[/]"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.9</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"  [dim]│[/] Paul has 4 letters"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.2</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"  [dim]└ [/][green]✓ exit 0[/][dim] · 0.1s[/]"</span><span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.8</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[green]╭──────────────────────╮[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[green]│ ✓ [/][bold]finished ok[/][dim] · 0.1s[/][green] │[/]"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"[green]╰──────────────────────╯[/]"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[[step]]</span>
+<span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">11.5</span>
+<span class="n">caret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"[dim]$[/] "</span><span class="p">]</span>
+</code></pre></div>
+<p><img alt="paulrun checking and running hello.md" src="../clips/steps.svg" /></p>
+<h2 id="in-the-wild">In the wild</h2>
+<ul>
+<li><a href="https://github.com/phalt/paulrun">paulrun</a>: the README demo</li>
+<li><a href="https://github.com/phalt/clientele">clientele</a>: the README, plus the <a href="https://docs.clientele.dev/openapi-cli/">client generator docs</a></li>
+<li><a href="https://clientele.dev">clientele.dev</a>: a REPL clip under the code, and the generator in action</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../embedding/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 🖼️ Embedding clips">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                🖼️ Embedding clips
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../agents/" class="md-footer__link md-footer__link--next" aria-label="Next: 🤖 Using zoetty with an agent">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                🤖 Using zoetty with an agent
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "content.code.copy", "search.suggest", "search.highlight", "navigation.footer"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

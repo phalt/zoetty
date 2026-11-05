@@ -1,0 +1,33 @@
+<div class="zt-repl" role="img" aria-label="A Python REPL importing zoetty&#x27;s markup parser and parsing some styled text">
+<div class="zt-repl-bar"><span></span><span></span><span></span><b>python</b></div>
+<div class="zt-repl-screen" style="animation-name:zt-repl-fade"><div class="zt-repl-view"><div class="zt-repl-body" style="animation-name:zt-repl-scroll"><div class="zt-repl-ln" style="animation-name:zt-repl-l0"><span class="zt-repl-dim">$</span> <span class="zt-repl-type " style="animation-name:zt-repl-t0-2">python -q</span><span class="zt-repl-caret" style="animation-name:zt-repl-k0"><i></i></span></div><div class="zt-repl-ln" style="animation-name:zt-repl-l1">&gt;&gt;&gt; from zoetty.markup import parse, plain</div><div class="zt-repl-ln" style="animation-name:zt-repl-l2">&gt;&gt;&gt; plain(parse(&quot;[bold]zoe[/]tty&quot;))</div><div class="zt-repl-ln" style="animation-name:zt-repl-l3">&#x27;zoetty&#x27;</div><div class="zt-repl-ln" style="animation-name:zt-repl-l4">&gt;&gt;&gt; [s.styles for s in parse(&quot;[bold green]ok[/] done&quot;)]</div><div class="zt-repl-ln" style="animation-name:zt-repl-l5">[(&#x27;bold&#x27;, &#x27;green&#x27;), ()]</div><div class="zt-repl-ln" style="animation-name:zt-repl-l6">&gt;&gt;&gt;</div><div class="zt-repl-ln" style="animation-name:zt-repl-l7"><span class="zt-repl-dim">$</span> <span class="zt-repl-caret" style="animation-name:zt-repl-k7"><i></i></span></div></div></div></div>
+</div>
+<style>
+.zt-repl{--bg:#1c1c1c;--fg:#d0d0d0;--bar:#2a2a2a;--blue:#4b8fe3;--green:#2fcf7a;--yellow:#e6e04a;--red:#e05252;--cyan:#4fc6d6;--magenta:#c678dd;font:clamp(9px,1.6vw,14px)/1.5 ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc(64ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}
+.zt-repl-bar{display:flex;align-items:center;gap:.45em;padding:.6em .9em;background:var(--bar)}
+.zt-repl-bar span{width:.8em;height:.8em;border-radius:50%;background:var(--fg);opacity:.3}
+.zt-repl-bar b{flex:1;text-align:center;font-weight:400;opacity:.5;margin-right:3em}
+.zt-repl-screen{padding:1em 1.5em 1.2em}
+.zt-repl-view{height:12em;overflow:hidden}
+.zt-repl-screen,.zt-repl-body,.zt-repl-ln,.zt-repl-type,.zt-repl-caret{animation-duration:6.07s;animation-iteration-count:infinite;animation-timing-function:step-end}
+.zt-repl-ln{white-space:pre;opacity:0}
+.zt-repl-type{display:inline-block;vertical-align:bottom;overflow:hidden;width:0}
+.zt-repl-caret{opacity:0}
+.zt-repl-caret i{display:inline-block;width:.6em;height:1.15em;vertical-align:-.2em;background:var(--fg);animation:zt-repl-blink 1s step-end infinite}
+@keyframes zt-repl-blink{50%{opacity:0}}
+.zt-repl-dim{opacity:.55}.zt-repl-bold{font-weight:700}.zt-repl-italic{font-style:italic}.zt-repl-blue{color:var(--blue)}.zt-repl-green{color:var(--green)}.zt-repl-yellow{color:var(--yellow)}.zt-repl-red{color:var(--red)}.zt-repl-cyan{color:var(--cyan)}.zt-repl-magenta{color:var(--magenta)}
+@keyframes zt-repl-l0{0%{opacity:0}6.590%,100%{opacity:1}}
+@keyframes zt-repl-t0-2{0%,9.061%{width:0;animation-timing-function:steps(9,end)}15.651%,100%{width:9ch}}
+@keyframes zt-repl-k0{0%{opacity:0}6.590%{opacity:1}23.888%,100%{opacity:0}}
+@keyframes zt-repl-l1{0%{opacity:0}23.888%,100%{opacity:1}}
+@keyframes zt-repl-l2{0%{opacity:0}25.041%,100%{opacity:1}}
+@keyframes zt-repl-l3{0%{opacity:0}26.194%,100%{opacity:1}}
+@keyframes zt-repl-l4{0%{opacity:0}27.348%,100%{opacity:1}}
+@keyframes zt-repl-l5{0%{opacity:0}28.501%,100%{opacity:1}}
+@keyframes zt-repl-l6{0%{opacity:0}29.654%,100%{opacity:1}}
+@keyframes zt-repl-l7{0%{opacity:0}34.102%,100%{opacity:1}}
+@keyframes zt-repl-k7{0%{opacity:0}34.102%{opacity:1}100.000%,100%{opacity:0}}
+@keyframes zt-repl-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0em)}}
+@keyframes zt-repl-fade{0%{opacity:1}90.115%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.zt-repl *{animation:none!important}.zt-repl-ln{opacity:1}.zt-repl-type{width:auto}.zt-repl-caret{display:none}.zt-repl-body{transform:translateY(-0em)}}
+</style>
