@@ -45,6 +45,7 @@ final_prompt = "[dim]$[/] "      # optional, prompt left blinking at the end. De
 typing_speed = 28                # optional, characters per second
 line_gap = 0.07                  # optional, seconds between output lines
 hold = 4.0                       # optional, seconds to hold the last frame before looping
+duration = 16                    # optional, total loop length; default worked out from the runs or steps
 chrome = true                    # optional, draw the window bar
 
 [record]                         # optional, how `record` runs commands
