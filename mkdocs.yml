@@ -2,8 +2,6 @@ site_name: zoetty
 site_url: https://phalt.github.io/zoetty/
 theme:
   name: material
-  # Zensical's classic variant keeps the Material for MkDocs look.
-  variant: classic
   features:
     - navigation.tabs
     - content.code.copy
