@@ -17,10 +17,10 @@ jobs:
       #       check-out repo and set-up python
       #----------------------------------------------
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
       - name: Set up python
         id: setup-python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@v7.1.0
         with:
           python-version: ${{matrix.python-version}}
       #----------------------------------------------
@@ -29,7 +29,7 @@ jobs:
       # Pointing uv at the interpreter setup-python installed overrides .python-version,
       # which would otherwise make every matrix entry run on 3.14.
       - name: Install UV
-        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        uses: astral-sh/setup-uv@v10.2.0
         with:
           python-version: ${{ steps.setup-python.outputs.python-path }}
           enable-cache: true
