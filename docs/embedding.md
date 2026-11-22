@@ -78,6 +78,20 @@ Two limitations, because it's CSS only:
 
 The [examples](examples.md#play-once-pause-and-replay) page has one to try.
 
+### SVG: link the image to itself
+
+An SVG shown as an image gets no clicks, so it can't have a button. Instead, wrap the image in a link to the same file. Clicking it opens the SVG on its own, which plays it from the start:
+
+```markdown
+[![zoetty building a clip](https://raw.githubusercontent.com/you/project/main/docs/clips/demo.svg)](https://raw.githubusercontent.com/you/project/main/docs/clips/demo.svg)
+```
+
+This works on PyPI as well as GitHub, and in any page that shows Markdown or HTML images.
+
+### Clips start when the page loads
+
+An animation starts when the page loads, not when it's scrolled into view. On a long README, a clip that plays once may have finished before anyone scrolls down to it. They'll still see its final frame, which is often what matters most. If the animation itself matters, give the clip a few plays with `loop = 3`, or keep it near the top of the page.
+
 ## Matching your site's colours
 
 Set `[theme]` to your site's code colours, so a clip sits next to your code blocks as if it belonged there:
