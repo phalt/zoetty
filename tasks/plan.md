@@ -44,3 +44,18 @@ Full task bodies are in [todo.md](todo.md).
 
 - **pty behaviour differs on macOS.** Keep recording to `pty.openpty` + `subprocess`, which both support; CI only runs Linux, so note it in the docs if anything differs.
 - **Font metrics in SVG.** Already handled by `textLength` per run; wide characters (emoji) may sit slightly off. Documented as a known limitation.
+
+## Play once, pause and replay
+
+Status: approved (2026-11-22). Tasks 12-15 in [todo.md](todo.md#play-once-pause-and-replay).
+
+People want to read the end of a clip. Three spec additions, one commit each, docs in the same commit:
+
+1. **`loop`** (`true` default, `false` = once, N = N times). Non-looping animations use `animation-iteration-count:N` with `fill-mode:forwards`. The fade plays only N-1 times with no fill, so the last play ends on the full final frame. The final caret's keyframes end visible instead of hidden.
+2. **`pause_on_hover`** (default `false`). `animation-play-state:paused` on hover of the screen and on `:focus-visible` within the clip. In HTML it's scoped to the screen so hovering the replay button doesn't freeze the clip.
+3. **HTML replay button**, only when `loop` isn't `true`. Hidden until `N * duration`, via an animation with that delay. `.zt:has(.replay:active)` sets `animation:none` on everything, button included; on release every animation restarts. `role="img"` moves to the screen so the button isn't hidden inside an image.
+4. **SVG replay is docs only**: wrap the image in a link to itself. An `<img>` gets no events, and its animation starts on page load.
+
+Defaults build byte-for-byte as before, so existing clips don't go stale.
+
+Risk: `:active` on iOS Safari is unreliable without JS. Checked in Chromium only; noted in the docs. Fallback if it misbehaves: a checkbox toggling between two copies of the keyframes.

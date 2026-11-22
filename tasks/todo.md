@@ -75,3 +75,35 @@ Flat `zoetty/` package, `pyproject.toml` (hatchling, click, rich, dev group as p
 - [x] `CHANGELOG.md` 0.1.0 entry, copied to `docs/CHANGELOG.md`
 - [x] CI green on GitHub
 - [ ] Released to PyPI and docs deployed (Paul, via `paulrun PUBLISHING.md`)
+
+# Play once, pause and replay
+
+Status: in progress. Plan: [tasks/plan.md](plan.md#play-once-pause-and-replay).
+
+From user feedback: "I just want to be able to read what it's actually doing at the end."
+
+## Task 12: `loop` (SVG and HTML)
+
+- [ ] `loop = true | false | N` loads; `0`, negatives and other types are errors
+- [ ] `loop = true` output is byte-for-byte unchanged
+- [ ] Otherwise every animation plays N times and holds its end; the fade plays N-1 times and doesn't hold, so the clip ends on the full final frame
+- [ ] The final caret stays visible (and blinking) once the clip stops
+- [ ] Docs: clip format, changelog
+
+## Task 13: `pause_on_hover` (SVG and HTML)
+
+- [ ] `pause_on_hover = true` pauses on hover of the screen, and on keyboard focus in the clip; default off and unchanged output
+- [ ] In HTML, the pause is scoped to the screen so the replay button doesn't freeze the clip
+- [ ] Docs: clip format, embedding, changelog
+
+## Task 14: HTML replay button
+
+- [ ] Only when `loop` isn't `true`; hidden until every play has finished; hidden under reduced motion
+- [ ] Holding it removes the animations, letting go restarts them (and hides the button until the next finish)
+- [ ] `role="img"` moves onto the screen when there's a button, so the button is reachable by assistive tech
+- [ ] Checked in Chromium with a mouse click and the keyboard
+- [ ] Docs: embedding, a play-once example, changelog
+
+## Task 15: SVG replay docs
+
+- [ ] Embedding: wrap the image in a link to the SVG to replay it; a clip in an `<img>` starts on page load, not when scrolled to

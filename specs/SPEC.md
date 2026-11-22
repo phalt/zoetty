@@ -47,6 +47,8 @@ line_gap = 0.07                  # optional, seconds between output lines
 hold = 4.0                       # optional, seconds to hold the last frame before looping
 duration = 16                    # optional, total loop length; default worked out from the runs or steps
 chrome = true                    # optional, draw the window bar
+loop = true                      # optional, true loops for ever, false plays once, a number plays that many times
+pause_on_hover = false           # optional, pause while the pointer is over the screen (HTML, and SVG shown inline)
 
 [record]                         # optional, how `record` runs commands
 cwd = "."                        # relative to the spec
@@ -93,7 +95,10 @@ Instead of `[[run]]`, a spec can give `[[step]]` entries (`at` seconds, `lines` 
 
 - **SVG:** one self-contained file. Every text run is placed at its column with `textLength`, so alignment survives whatever monospace font the viewer has. Works inside `<img>`: no external fonts, no scripts, no `foreignObject`.
 - **HTML fragment:** a `<div>` plus a `<style>`, no `<html>` wrapper. Text is selectable. All class and keyframe names are prefixed with an id derived from the output file name, so several clips can share one page.
-- Both: loop forever, fade out before restarting, show the final frame with no animation under `prefers-reduced-motion`, and are byte-for-byte deterministic (so `check` can compare them).
+- Both: loop for ever by default, fading out before each restart. With `loop = false` or a number they play that many times and then stay on the final frame, caret blinking: the last play never fades. They show the final frame with no animation under `prefers-reduced-motion`, and are byte-for-byte deterministic (so `check` can compare them).
+- `pause_on_hover = true` pauses the animation while the pointer is over the screen, or keyboard focus is in the clip. It needs the clip to receive pointer events, so it works in HTML and inline SVG but not in an `<img>`.
+- HTML clips that don't loop for ever get a replay button, shown once the last play has finished. It's pure CSS: holding the button removes the animations and letting go starts them again. SVG has no replay button (an `<img>` gets no clicks); the docs show wrapping it in a link to the SVG instead, which replays it.
+- Clips with the default `loop` and `pause_on_hover` build exactly as before, so existing clips don't go stale.
 
 ## Commands
 
