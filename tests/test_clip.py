@@ -25,6 +25,7 @@ def test_minimal_spec_gets_defaults(spec, tmp_path):
     assert clip.label == "A clip"
     assert clip.out == [tmp_path / "clip.svg"]
     assert (clip.cols, clip.rows, clip.title, clip.chrome) == (80, None, "", True)
+    assert clip.loop is True and clip.pause_on_hover is False
     assert clip.prompt == DEFAULT_PROMPT and clip.final_prompt is None
     assert clip.theme == THEME
     assert clip.record.cwd == tmp_path and clip.record.setup == [] and clip.record.env == {}
@@ -50,6 +51,7 @@ def test_every_key(spec, tmp_path):
             duration = 30
             chrome = false
             loop = 2
+            pause_on_hover = true
 
             [record]
             cwd = "work"
@@ -91,7 +93,7 @@ def test_every_key(spec, tmp_path):
         2,
         30,
     )
-    assert clip.loop == 2 and clip.plays == 2
+    assert clip.loop == 2 and clip.plays == 2 and clip.pause_on_hover is True
     assert clip.chrome is False and clip.final_prompt == "> " and clip.title == "~/x"
     assert clip.record.cwd == tmp_path / "work" and clip.record.env == {"NAME": "Paul"} and clip.record.timeout == 5
     assert clip.theme["bg"] == "#282c34" and clip.theme["red"] == "#e06" and clip.theme["fg"] == THEME["fg"]

@@ -31,6 +31,7 @@ lines = ["README.md  src  tests"]
 | `duration` | worked out | Total loop length in seconds, if you'd rather set it. |
 | `chrome` | `true` | Draw the window bar with its dots and title. |
 | `loop` | `true` | `true` loops for ever. `false` plays once, and a number plays that many times; then the clip stays on its final frame so people can read it. See [play once](#play-once). |
+| `pause_on_hover` | `false` | Pause while the pointer is over the screen, or while it has focus (a keyboard user tabbing to it, or a tap on a touch screen). Works for HTML clips and inline SVGs, not SVGs shown as images. See [embedding](embedding.md#pausing-to-read). |
 
 ## Play once
 

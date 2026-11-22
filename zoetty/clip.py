@@ -98,6 +98,7 @@ class Clip:
     duration: float | None = None
     chrome: bool = True
     loop: bool | int = True
+    pause_on_hover: bool = False
     runs: list[Run] = field(default_factory=list)
     steps: list[Step] = field(default_factory=list)
 
@@ -125,6 +126,7 @@ _TOP = {
     "duration": "positive number",
     "chrome": "bool",
     "loop": "loop",
+    "pause_on_hover": "bool",
     "record": "table",
     "theme": "table",
     "run": "list of tables",
@@ -267,6 +269,7 @@ def load(path: Path) -> Clip:
         duration=data.get("duration"),
         chrome=data.get("chrome", True),
         loop=data.get("loop", True),
+        pause_on_hover=data.get("pause_on_hover", False),
         runs=[
             Run(
                 cmd=run["cmd"],

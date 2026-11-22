@@ -64,9 +64,17 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
     bar = ""
     if clip.chrome:
         bar = f'<div class="{n}-bar"><span></span><span></span><span></span><b>{escape(clip.title)}</b></div>\n'
+    image = f' role="img" aria-label="{escape(clip.label)}"'
+    outer, screen, pause = image, "", ""
+    if clip.pause_on_hover:  # the screen takes focus, so it carries the image role and label
+        outer, screen = "", f'{image} tabindex="0"'
+        pause = (
+            f"\n.{n}-screen:hover,.{n}-screen:hover *,.{n}-screen:focus,.{n}-screen:focus *"
+            "{animation-play-state:paused}"
+        )
     newline = "\n"
-    return f"""<div class="{n}" role="img" aria-label="{escape(clip.label)}">
-{bar}<div class="{n}-screen" style="{timeline.fading(n)}"><div class="{n}-view"><div class="{n}-body" style="animation-name:{n}-scroll">{"".join(body)}</div></div></div>
+    return f"""<div class="{n}"{outer}>
+{bar}<div class="{n}-screen"{screen} style="{timeline.fading(n)}"><div class="{n}-view"><div class="{n}-body" style="animation-name:{n}-scroll">{"".join(body)}</div></div></div>
 </div>
 <style>
 .{n}{{{theme}font:clamp(9px,1.6vw,14px)/1.5 {FONTS};background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc({clip.cols}ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}}
@@ -82,7 +90,7 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
 .{n}-caret i{{display:inline-block;width:.6em;height:1.15em;vertical-align:-.2em;background:var(--fg);animation:{n}-blink 1s step-end infinite}}
 @keyframes {n}-blink{{50%{{opacity:0}}}}
 .{n}-dim{{opacity:.55}}.{n}-bold{{font-weight:700}}.{n}-italic{{font-style:italic}}{colours}
-{newline.join(css)}
+{newline.join(css)}{pause}
 @media (prefers-reduced-motion:reduce){{.{n} *{{animation:none!important}}.{n}-ln{{opacity:1}}.{n}-type{{width:auto}}.{n}-caret{{display:none}}.{n}-body{{transform:translateY(-{last:g}em)}}}}
 </style>
 """

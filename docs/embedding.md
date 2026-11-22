@@ -53,6 +53,16 @@ markdown_extensions:
 
 This page's [examples](examples.md) are embedded exactly like that. Anything else that lets you put raw HTML in a page works the same way: Hugo shortcodes, Jekyll includes, Astro components, or plain copy and paste.
 
+## Pausing to read
+
+With `pause_on_hover = true`, a clip pauses while the pointer is over its screen, so people can stop it on any frame and read it. It also pauses while it has focus: tab to it with the keyboard, or tap it on a touch screen, and tap elsewhere to carry on.
+
+```toml
+pause_on_hover = true
+```
+
+This needs the clip to get pointer events. HTML fragments do, and so do SVGs pasted inline into a page. An SVG shown as an image (`![alt](demo.svg)` or `<img>`), which is how READMEs and PyPI show it, gets no pointer events at all, so there it has no effect. To let people read the end of a clip there, use [`loop`](clip-format.md#play-once) instead.
+
 ## Replaying a clip
 
 Clips with [`loop`](clip-format.md#play-once) set stop on their final frame. To watch one again, reload the page.

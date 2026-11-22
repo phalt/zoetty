@@ -155,3 +155,27 @@ def test_the_final_caret_stays_once_the_clip_stops(spec, render):
     assert re.search(rf"@keyframes zt-x-k{final}\{{0%\{{opacity:0\}}[\d.]+%,100%\{{opacity:1\}}\}}", once)
     # Earlier carets still go when the next line appears.
     assert re.search(r"@keyframes zt-x-k0\{[^\n]*100%\{opacity:0\}\}", once)
+
+
+@pytest.mark.parametrize("render", [svg.render, html.render])
+def test_clips_dont_pause_on_hover_by_default(spec, render):
+    out = built(spec, "", render)
+    assert "play-state" not in out and "tabindex" not in out
+    assert built(spec, "pause_on_hover = false", render) == out
+
+
+def test_svg_pauses_on_hover_and_focus(spec):
+    out = built(spec, "pause_on_hover = true", svg.render)
+    assert re.search(r'<svg [^>]*tabindex="0"', out)
+    assert "svg:hover .a,svg:focus .a{animation-play-state:paused}" in out
+
+
+def test_html_pauses_on_hover_and_focus_of_the_screen(spec):
+    out = built(spec, "pause_on_hover = true", html.render)
+    # The screen takes focus (keyboard, or a tap on a touch screen) and carries the image role and label.
+    assert out.startswith('<div class="zt-x">')
+    assert '<div class="zt-x-screen" role="img" aria-label="A demo &amp; &lt;friends&gt;" tabindex="0" style=' in out
+    assert (
+        ".zt-x-screen:hover,.zt-x-screen:hover *,.zt-x-screen:focus,.zt-x-screen:focus *{animation-play-state:paused}"
+        in out
+    )

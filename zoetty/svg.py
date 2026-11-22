@@ -117,15 +117,19 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
             f'<text x="{width / 2}" y="{BAR / 2 + 5}" text-anchor="middle" opacity=".5" fill="{theme["fg"]}"'
             f' style="font-size:13px">{escape(clip.title)}</text>'
         )
+    focus = pause = ""
+    if clip.pause_on_hover:  # only when the SVG is inline: an <img> gets no pointer or focus
+        focus = ' tabindex="0"'
+        pause = "\nsvg:hover .a,svg:focus .a{animation-play-state:paused}"
     newline = "\n"
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{label}">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{label}"{focus}>
 <title>{label}</title>
 <style>
 text{{font-family:{FONTS};font-size:{FONT_SIZE}px;white-space:pre}}
 .a{{animation-duration:{total}s;animation-iteration-count:{timeline.iterations};animation-timing-function:step-end}}
 .blink{{animation:{name}-blink 1s step-end infinite}}
 @keyframes {name}-blink{{50%{{opacity:0}}}}
-{newline.join(css)}
+{newline.join(css)}{pause}
 @media (prefers-reduced-motion:reduce){{.a,.blink{{animation:none!important}}.cover,.caret{{display:none}}.scroll{{transform:translateY(-{last}px)}}}}
 </style>
 <defs><clipPath id="{name}-screen"><rect x="0" y="{top}" width="{width}" height="{timeline.rows * LINE_HEIGHT}"/></clipPath></defs>
