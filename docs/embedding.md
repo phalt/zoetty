@@ -14,7 +14,7 @@ out = ["demo.svg", "demo.html"]
 | Fonts | The viewer's monospace font | The page's, or a monospace font you load |
 | Size | A few KB | A few KB |
 
-Both loop for ever, fade out before restarting, and show the finished screen with no animation for people who prefer reduced motion.
+Both loop for ever and fade out before restarting, or play a set number of times with [`loop`](clip-format.md#play-once). Both show the finished screen with no animation for people who prefer reduced motion.
 
 ## SVG in a README
 
@@ -52,6 +52,10 @@ markdown_extensions:
 ```
 
 This page's [examples](examples.md) are embedded exactly like that. Anything else that lets you put raw HTML in a page works the same way: Hugo shortcodes, Jekyll includes, Astro components, or plain copy and paste.
+
+## Replaying a clip
+
+Clips with [`loop`](clip-format.md#play-once) set stop on their final frame. To watch one again, reload the page.
 
 ## Matching your site's colours
 

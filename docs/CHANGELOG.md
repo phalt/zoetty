@@ -1,5 +1,9 @@
 # Change log
 
+## Unreleased
+
+- `loop = false` plays a clip once, and `loop = 3` three times, then it stays on the final frame so people can read the end. The default, `true`, loops for ever as before.
+
 ## 0.1.0
 
 The first release.

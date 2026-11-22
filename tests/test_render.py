@@ -118,3 +118,40 @@ def test_typed_text_in_steps(spec, render):
     )
     out = render(clip, timeline.build(clip), "zt-x")
     assert out.count("steps(1,end)") == 2
+
+
+def built(spec, extra: str, render, name: str = "zt-x") -> str:
+    clip = load(spec(extra + "\n" + SPEC))
+    return render(clip, timeline.build(clip), name)
+
+
+@pytest.mark.parametrize("render", [svg.render, html.render])
+def test_clips_loop_for_ever_by_default(spec, render):
+    out = built(spec, "", render)
+    assert "animation-iteration-count:infinite;" in out and "forwards" not in out
+
+
+@pytest.mark.parametrize("render", [svg.render, html.render])
+def test_loop_true_builds_exactly_as_the_default(spec, render):
+    assert built(spec, "loop = true", render) == built(spec, "", render)
+
+
+@pytest.mark.parametrize("render", [svg.render, html.render])
+@pytest.mark.parametrize(("loop", "plays"), [("false", 1), ("3", 3)])
+def test_clips_that_stop_end_on_the_full_final_frame(spec, render, loop, plays):
+    out = built(spec, f"loop = {loop}", render)
+    assert f"animation-iteration-count:{plays};animation-fill-mode:forwards;" in out
+    assert "infinite;" not in out.replace("step-end infinite", "")  # only the caret blink repeats for ever
+    # The fade runs before every replay but not after the last play, and doesn't hold its faded end.
+    assert f"animation-name:zt-x-fade;animation-iteration-count:{plays - 1};animation-fill-mode:none" in out
+
+
+@pytest.mark.parametrize("render", [svg.render, html.render])
+def test_the_final_caret_stays_once_the_clip_stops(spec, render):
+    looping, once = built(spec, "", render), built(spec, "loop = false", render)
+    final = len(timeline.build(load(spec(SPEC))).lines) - 1
+    assert re.search(rf"@keyframes zt-x-k{final}\{{[^\n]*100%\{{opacity:0\}}\}}", looping)
+    # It must say 100%: without it, the end falls back to the caret's hidden base style.
+    assert re.search(rf"@keyframes zt-x-k{final}\{{0%\{{opacity:0\}}[\d.]+%,100%\{{opacity:1\}}\}}", once)
+    # Earlier carets still go when the next line appears.
+    assert re.search(r"@keyframes zt-x-k0\{[^\n]*100%\{opacity:0\}\}", once)

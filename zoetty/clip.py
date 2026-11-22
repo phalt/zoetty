@@ -97,8 +97,16 @@ class Clip:
     hold: float = 4.0
     duration: float | None = None
     chrome: bool = True
+    loop: bool | int = True
     runs: list[Run] = field(default_factory=list)
     steps: list[Step] = field(default_factory=list)
+
+    @property
+    def plays(self) -> int | None:
+        """How many times the clip plays before it stops, or None to loop for ever."""
+        if self.loop is True:
+            return None
+        return 1 if self.loop is False else self.loop
 
 
 # Each key's type and check. `number` allows ints and floats, never bools.
@@ -116,6 +124,7 @@ _TOP = {
     "hold": "number",
     "duration": "positive number",
     "chrome": "bool",
+    "loop": "loop",
     "record": "table",
     "theme": "table",
     "run": "list of tables",
@@ -153,6 +162,10 @@ def _problem(kind: _Kind, value: Any) -> str | None:
         case "number":
             ok = _number(value) and value >= 0
             kind = "number, 0 or more"
+        case "loop":
+            if isinstance(value, bool) or (isinstance(value, int) and value > 0):
+                return None
+            return f"should be true, false or a number of plays (1 or more), got {value!r}"
         case "positive number":
             ok = _number(value) and value > 0
         case "table":
@@ -253,6 +266,7 @@ def load(path: Path) -> Clip:
         hold=data.get("hold", 4.0),
         duration=data.get("duration"),
         chrome=data.get("chrome", True),
+        loop=data.get("loop", True),
         runs=[
             Run(
                 cmd=run["cmd"],

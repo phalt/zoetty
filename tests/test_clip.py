@@ -1,3 +1,4 @@
+import tomllib
 from pathlib import Path
 
 import pytest
@@ -48,6 +49,7 @@ def test_every_key(spec, tmp_path):
             hold = 2
             duration = 30
             chrome = false
+            loop = 2
 
             [record]
             cwd = "work"
@@ -89,6 +91,7 @@ def test_every_key(spec, tmp_path):
         2,
         30,
     )
+    assert clip.loop == 2 and clip.plays == 2
     assert clip.chrome is False and clip.final_prompt == "> " and clip.title == "~/x"
     assert clip.record.cwd == tmp_path / "work" and clip.record.env == {"NAME": "Paul"} and clip.record.timeout == 5
     assert clip.theme["bg"] == "#282c34" and clip.theme["red"] == "#e06" and clip.theme["fg"] == THEME["fg"]
@@ -222,3 +225,20 @@ def test_step_problems(spec):
 def test_list_of_markup_must_be_a_list_of_strings(spec):
     found = problems(spec('label = "x"\n[[run]]\ncmd = "ls"\nlines = "hi"\n'))
     assert found == ["run 1: lines should be a list of markup, got 'hi'"]
+
+
+@pytest.mark.parametrize(("value", "plays"), [("true", None), ("false", 1), ("1", 1), ("3", 3)])
+def test_loop(spec, value, plays):
+    clip = load(spec(f"loop = {value}\n" + MINIMAL))
+    assert clip.plays == plays
+
+
+def test_loop_defaults_to_for_ever(spec):
+    assert load(spec(MINIMAL)).plays is None
+
+
+@pytest.mark.parametrize("value", ["0", "-2", "1.5", '"once"'])
+def test_loop_must_be_a_bool_or_a_positive_int(spec, value):
+    assert problems(spec(f"loop = {value}\n" + MINIMAL)) == [
+        f"loop should be true, false or a number of plays (1 or more), got {tomllib.loads(f'v = {value}')['v']!r}"
+    ]

@@ -43,10 +43,7 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
             else:
                 parts.append(text)
         if line.caret_until is not None:
-            css.append(
-                f"@keyframes {n}-k{index}{{0%{{opacity:0}}{percent(line.at, total)}{{opacity:1}}"
-                f"{percent(line.caret_until, total)},100%{{opacity:0}}}}"
-            )
+            css.append(timeline.caret(n, index, line.caret_until))
             parts.append(f'<span class="{n}-caret" style="animation-name:{n}-k{index}"><i></i></span>')
         body.append(f'<div class="{n}-ln" style="animation-name:{n}-l{index}">{"".join(parts) or "&nbsp;"}</div>')
 
@@ -69,7 +66,7 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
         bar = f'<div class="{n}-bar"><span></span><span></span><span></span><b>{escape(clip.title)}</b></div>\n'
     newline = "\n"
     return f"""<div class="{n}" role="img" aria-label="{escape(clip.label)}">
-{bar}<div class="{n}-screen" style="animation-name:{n}-fade"><div class="{n}-view"><div class="{n}-body" style="animation-name:{n}-scroll">{"".join(body)}</div></div></div>
+{bar}<div class="{n}-screen" style="{timeline.fading(n)}"><div class="{n}-view"><div class="{n}-body" style="animation-name:{n}-scroll">{"".join(body)}</div></div></div>
 </div>
 <style>
 .{n}{{{theme}font:clamp(9px,1.6vw,14px)/1.5 {FONTS};background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc({clip.cols}ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}}
@@ -78,7 +75,7 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
 .{n}-bar b{{flex:1;text-align:center;font-weight:400;opacity:.5;margin-right:3em}}
 .{n}-screen{{padding:1em 1.5em 1.2em}}
 .{n}-view{{height:{timeline.rows * 1.5:g}em;overflow:hidden}}
-.{n}-screen,.{n}-body,.{n}-ln,.{n}-type,.{n}-caret{{animation-duration:{total}s;animation-iteration-count:infinite;animation-timing-function:step-end}}
+.{n}-screen,.{n}-body,.{n}-ln,.{n}-type,.{n}-caret{{animation-duration:{total}s;animation-iteration-count:{timeline.iterations};animation-timing-function:step-end}}
 .{n}-ln{{white-space:pre;opacity:0}}
 .{n}-type{{display:inline-block;vertical-align:bottom;overflow:hidden;width:0}}
 .{n}-caret{{opacity:0}}

@@ -39,6 +39,25 @@ class Timeline:
     lines: list[Line]
     duration: float
     rows: int
+    plays: int | None = None  # None loops for ever
+
+    @property
+    def iterations(self) -> str:
+        """CSS for how often the clip's animations play. Clips that stop hold their last frame."""
+        return "infinite" if self.plays is None else f"{self.plays};animation-fill-mode:forwards"
+
+    def fading(self, name: str) -> str:
+        """Inline style for the fade-out, which runs before each replay but never after the last play."""
+        if self.plays is None:
+            return f"animation-name:{name}-fade"
+        return f"animation-name:{name}-fade;animation-iteration-count:{self.plays - 1};animation-fill-mode:none"
+
+    def caret(self, name: str, index: int, until: float) -> str:
+        """Keyframes showing line `index`'s caret until `until`. A clip that stops keeps its final caret."""
+        on = f"@keyframes {name}-k{index}{{0%{{opacity:0}}{percent(self.lines[index].at, self.duration)}"
+        if until >= self.duration and self.plays is not None:
+            return on + ",100%{opacity:1}}"
+        return on + f"{{opacity:1}}{percent(until, self.duration)},100%{{opacity:0}}}}"
 
     @property
     def fade(self) -> float:
@@ -125,4 +144,4 @@ def _lines(steps: list[tuple[float, list[Segment], bool]], duration: float) -> l
 def build(clip: Clip) -> Timeline:
     """Everything shown in the clip, with times in seconds. Raises MissingCapture."""
     lines, duration = _from_runs(clip) if clip.runs else _from_steps(clip)
-    return Timeline(lines, duration, clip.rows or len(lines))
+    return Timeline(lines, duration, clip.rows or len(lines), clip.plays)
