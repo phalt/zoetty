@@ -29,6 +29,7 @@ If you're an agent that's been sent here, follow these steps.
     - Use `[record] setup` to reset anything a command creates (`rm -rf my_output`), so recording again gives the same clip.
     - Use `exec` when the command needs a path or prefix the reader shouldn't see (`.venv/bin/tool`, `uv run tool`, `cd example &&`).
     - Use `input` for anything that prompts or for a REPL. It's sent after the program goes quiet, then Ctrl-D.
+    - To match the project's colours, set `theme` to the closest [preset](themes.md), and for HTML fragments override its CSS variables in the site's stylesheet.
 4. **Record it**: `zoetty record docs/clips/<name>.toml`. Read the output: every run should be `✓`, or `!` if the command is meant to fail. Open the capture files and check they hold what you expected. Never edit captures by hand: fix the spec or the setup and record again.
 5. **Build it**: `zoetty build docs/clips/<name>.toml`.
 6. **Look at it.** Open the SVG in a browser, or take screenshots at a few points if you can. Check nothing is cut off at the right edge (raise `cols`), nothing important scrolls away too fast (raise `rows` or `line_gap`), and the timing feels natural.

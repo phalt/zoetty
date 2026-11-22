@@ -7,6 +7,7 @@
 - HTML clips that stop show a CSS-only replay button once they finish.
 - 17 theme presets from Ghostty's themes, such as Catppuccin, Dracula, Monokai, Nord, Gruvbox and Solarized: `theme = "dracula"`, or `[theme]` with `name = "dracula"` to change some of its colours.
 - `zoetty themes` lists the presets; `zoetty themes NAME` prints one as a `[theme]` table to paste and edit.
+- A themes page in the docs: every preset, the default colours, and the CSS variables and classes for restyling HTML clips from your own stylesheet.
 
 ## 0.1.0
 

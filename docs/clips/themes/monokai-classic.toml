@@ -1,0 +1,22 @@
+# The monokai-classic preset, for the gallery on the themes page.
+title = "monokai-classic"
+label = "The monokai-classic theme: a terminal showing text in each of its colours"
+theme = "monokai-classic"
+cols = 40
+loop = false
+hold = 0.5
+
+[[step]]
+at = 0
+lines = [
+  "[dim]$[/] ls",
+  "[blue]docs[/]  [cyan]link[/]  [green]tool.py[/]  README.md",
+  "[dim]$[/] tool check",
+  "[green]✓ passed[/]  [yellow]! slow[/]  [red]✗ failed[/]",
+  "[magenta]●[/] [bold]bold[/] [dim]dim[/] [italic]italic[/]",
+]
+
+[[step]]
+at = 0.3
+caret = true
+lines = ["[dim]$[/] "]

@@ -94,7 +94,7 @@ An animation starts when the page loads, not when it's scrolled into view. On a 
 
 ## Matching your site's colours
 
-Set `[theme]` to your site's code colours, so a clip sits next to your code blocks as if it belonged there:
+Pick the [theme preset](themes.md) closest to your site's code colours, or set `[theme]` to them, so a clip sits next to your code blocks as if it belonged there:
 
 ```toml
 [theme]
@@ -102,6 +102,8 @@ bg = "#282c34"
 bar = "#21252b"
 fg = "#abb2bf"
 ```
+
+HTML fragments can also be restyled from your site's CSS, light and dark modes included: see [restyling HTML clips](themes.md#restyling-html-clips-with-css).
 
 ## Keeping clips fresh
 

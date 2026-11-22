@@ -34,6 +34,7 @@ nav:
   - 📝 Documentation:
     - 📜 Clip format: clip-format.md
     - 📟 Command line: cli.md
+    - 🎨 Themes: themes.md
     - 🖼️ Embedding clips: embedding.md
     - 🎬 Examples: examples.md
     - 🤖 Using zoetty with an agent: agents.md

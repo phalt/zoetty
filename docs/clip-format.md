@@ -126,7 +126,7 @@ name = "dracula"
 bg = "#1e1f29"
 ```
 
-The presets are `catppuccin-latte`, `catppuccin-mocha`, `dracula`, `everforest`, `github-dark`, `github-light`, `gruvbox-dark`, `gruvbox-light`, `kanagawa`, `monokai-classic`, `monokai-pro`, `nord`, `one-dark`, `rose-pine`, `solarized-dark`, `solarized-light` and `tokyo-night`.
+The presets are `catppuccin-latte`, `catppuccin-mocha`, `dracula`, `everforest`, `github-dark`, `github-light`, `gruvbox-dark`, `gruvbox-light`, `kanagawa`, `monokai-classic`, `monokai-pro`, `nord`, `one-dark`, `rose-pine`, `solarized-dark`, `solarized-light` and `tokyo-night`. See them all on the [themes](themes.md) page.
 
 ## Markup
 

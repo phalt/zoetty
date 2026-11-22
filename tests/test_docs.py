@@ -1,16 +1,18 @@
 """The docs and README are tested, so they can't drift from what zoetty does."""
 
 import re
+import tomllib
 from pathlib import Path
 
 import pytest
 
 from zoetty import html, svg, timeline
 from zoetty.clip import load
+from zoetty.themes import DEFAULT, PRESETS
 
 ROOT = Path(__file__).parent.parent
 DOCS = ROOT / "docs"
-CLIPS = sorted((DOCS / "clips").glob("*.toml"))
+CLIPS = sorted((DOCS / "clips").rglob("*.toml"))
 PAGES = [ROOT / "README.md", *sorted(DOCS.glob("*.md"))]
 
 
@@ -18,7 +20,7 @@ def fences(path: Path, language: str) -> list[str]:
     return re.findall(rf"^```{language}\n(.*?)^```", path.read_text(), re.MULTILINE | re.DOTALL)
 
 
-@pytest.mark.parametrize("path", CLIPS, ids=lambda path: path.name)
+@pytest.mark.parametrize("path", CLIPS, ids=lambda path: str(path.relative_to(DOCS / "clips")))
 def test_docs_clips_are_built_and_up_to_date(path):
     clip = load(path)
     lines = timeline.build(clip)
@@ -66,3 +68,36 @@ def test_the_agent_prompt_is_the_same_everywhere():
 
 def test_changelogs_match():
     assert (ROOT / "CHANGELOG.md").read_text() == (DOCS / "CHANGELOG.md").read_text()
+
+
+THEMES = DOCS / "themes.md"
+
+
+@pytest.mark.parametrize("name", PRESETS)
+def test_every_preset_is_in_the_gallery(name):
+    clip = load(DOCS / "clips" / "themes" / f"{name}.toml")
+    assert clip.theme == PRESETS[name]
+    assert f"| `{name}` | ![{clip.label}](clips/themes/{name}.svg) |" in THEMES.read_text()
+
+
+def test_the_clip_format_lists_every_preset():
+    names = ", ".join(f"`{name}`" for name in list(PRESETS)[:-1]) + f" and `{list(PRESETS)[-1]}`"
+    assert f"The presets are {names}." in (DOCS / "clip-format.md").read_text()
+
+
+def test_the_themes_page_shows_the_default_theme():
+    tables = [tomllib.loads(text) for text in fences(THEMES, "toml")]
+    assert {"theme": DEFAULT} in tables
+
+
+def test_the_themes_page_shows_the_css_an_html_clip_really_has(tmp_path):
+    spec = tmp_path / "demo.toml"
+    spec.write_text('label = "x"\nout = ["demo.html"]\nloop = false\n[[run]]\ncmd = "ls"\nlines = ["[bold]b[/]"]\n')
+    clip = load(spec)
+    fragment = html.render(clip, timeline.build(clip), "zt-demo")
+    shown = fences(THEMES, "css")[0]
+    variables = dict(re.findall(r"--(\w+): (#\w+);", shown))
+    assert variables == DEFAULT and shown.startswith(".zt-demo {")
+    assert ".zt-demo{" + "".join(f"--{key}:{value};" for key, value in variables.items()) in fragment
+    for name in re.findall(r"^\| `(zt-demo[\w-]*)`", THEMES.read_text(), re.MULTILINE):
+        assert f".{name}" in fragment, name
