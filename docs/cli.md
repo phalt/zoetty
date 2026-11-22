@@ -1,6 +1,6 @@
 # 📟 Command line
 
-Every command takes one or more spec files, so a shell glob does a whole folder: `zoetty build docs/clips/*.toml`.
+Every command but `themes` takes one or more spec files, so a shell glob does a whole folder: `zoetty build docs/clips/*.toml`.
 
 ## `zoetty init SPEC`
 
@@ -57,6 +57,33 @@ zoetty check docs/clips/*.toml
 ```
 
 `check` doesn't re-record anything: it trusts the captures in your repo. It only needs zoetty installed, not the tools your clips show.
+
+## `zoetty themes [NAME]`
+
+Lists the [theme presets](clip-format.md#theme-colours) with a swatch of each colour. Use one with `theme = "NAME"`.
+
+```sh
+zoetty themes
+```
+
+With a name, prints that preset as a `[theme]` table, to paste into a spec and change:
+
+```sh
+zoetty themes nord
+```
+
+```toml
+[theme]
+bg = "#2e3440"
+fg = "#d8dee9"
+bar = "#3b4252"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+```
 
 ## `zoetty --version`
 

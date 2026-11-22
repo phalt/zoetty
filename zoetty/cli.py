@@ -5,7 +5,7 @@ from rich.console import Console
 from rich.markup import escape
 
 from zoetty import clip as clips
-from zoetty import html, record, svg, timeline
+from zoetty import html, record, svg, themes, timeline
 from zoetty.settings import VERSION
 
 STARTER = """# A zoetty clip. Build it with: zoetty build {path}
@@ -171,3 +171,20 @@ def record_(specs: tuple[Path, ...]) -> None:
             console.print(f"  {mark} {escape(run.cmd)} [dim]· exit {result.exit_code} → {escape(str(run.output))}[/]")
     if failed:
         raise SystemExit(1)
+
+
+@cli.command(name="themes")
+@click.argument("name", required=False, type=click.Choice(list(themes.PRESETS)))
+def themes_(name: str | None) -> None:
+    """List the theme presets, or print NAME as a [theme] table to copy into a spec."""
+    console = _console()
+    if name is not None:
+        click.echo("[theme]")
+        for key, value in themes.PRESETS[name].items():
+            click.echo(f'{key} = "{value}"')
+        return
+    width = max(map(len, themes.PRESETS))
+    for preset, colours in themes.PRESETS.items():
+        swatches = "".join(f"[on {value}]  [/]" for value in colours.values())
+        console.print(f"{preset:<{width}}  {swatches}")
+    console.print('[dim]Use one with theme = "NAME", or zoetty themes NAME to print its colours.[/]')

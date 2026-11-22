@@ -2,7 +2,9 @@ import pytest
 from click.testing import CliRunner
 
 from zoetty.cli import cli
+from zoetty.clip import load
 from zoetty.settings import VERSION
+from zoetty.themes import PRESETS
 
 STATIC = """
 label = "Static"
@@ -146,3 +148,23 @@ def test_record_reports_broken_specs(invoke, spec):
     spec("nope", name="broken.toml")
     result = invoke("record", "broken.toml")
     assert result.exit_code == 1 and "isn't valid TOML" in result.output
+
+
+def test_themes_lists_every_preset(invoke):
+    result = invoke("themes")
+    assert result.exit_code == 0
+    names = [line.split()[0] for line in result.output.splitlines()[:-1]]
+    assert names == list(PRESETS)
+    assert "zoetty themes NAME" in result.output.splitlines()[-1]
+
+
+def test_themes_name_prints_a_theme_table_that_loads(invoke, spec):
+    result = invoke("themes", "dracula")
+    assert result.exit_code == 0 and result.output.startswith("[theme]\n")
+    assert load(spec('label = "x"\n[[run]]\ncmd = "ls"\n' + result.output)).theme == PRESETS["dracula"]
+
+
+def test_themes_unknown_name(invoke):
+    result = invoke("themes", "pink")
+    assert result.exit_code == 2
+    assert "'pink' is not one of 'catppuccin-latte'" in result.output
