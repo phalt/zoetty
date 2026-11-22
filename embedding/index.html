@@ -12,7 +12,7 @@
       
       
       
-        <link rel="prev" href="../cli/">
+        <link rel="prev" href="../themes/">
       
       
         <link rel="next" href="../examples/">
@@ -516,6 +516,33 @@
                   
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  🎨 Themes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
     
   
   
@@ -596,6 +623,67 @@
       </span>
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pausing-to-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pausing to read
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replaying-a-clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Replaying a clip
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Replaying a clip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-the-replay-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        HTML: the replay button
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg-link-the-image-to-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SVG: link the image to itself
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clips-start-when-the-page-loads" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Clips start when the page loads
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -781,6 +869,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pausing-to-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pausing to read
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replaying-a-clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Replaying a clip
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Replaying a clip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-the-replay-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        HTML: the replay button
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg-link-the-image-to-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SVG: link the image to itself
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clips-start-when-the-page-loads" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Clips start when the page loads
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#matching-your-sites-colours" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -862,7 +1011,7 @@
 </tr>
 </tbody>
 </table>
-<p>Both loop for ever, fade out before restarting, and show the finished screen with no animation for people who prefer reduced motion.</p>
+<p>Both loop for ever and fade out before restarting, or play a set number of times with <a href="../clip-format/#play-once"><code>loop</code></a>. Both show the finished screen with no animation for people who prefer reduced motion.</p>
 <h2 id="svg-in-a-readme">SVG in a README</h2>
 <p>GitHub strips <code>&lt;style&gt;</code> from README HTML, so an HTML clip won't animate there. An SVG referenced as an image does, because its animation is CSS inside the SVG file:</p>
 <div class="highlight"><pre><span></span><code>![<span class="nt">zoetty building a clip</span>](<span class="na">docs/clips/demo.svg</span>)
@@ -883,13 +1032,36 @@
 <div class="highlight"><pre><span></span><code>--8&lt;-- "clips/demo.html"
 </code></pre></div>
 <p>This page's <a href="../examples/">examples</a> are embedded exactly like that. Anything else that lets you put raw HTML in a page works the same way: Hugo shortcodes, Jekyll includes, Astro components, or plain copy and paste.</p>
+<h2 id="pausing-to-read">Pausing to read</h2>
+<p>With <code>pause_on_hover = true</code>, a clip pauses while the pointer is over its screen, so people can stop it on any frame and read it. It also pauses while it has focus: tab to it with the keyboard, or tap it on a touch screen, and tap elsewhere to carry on.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pause_on_hover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p>This needs the clip to get pointer events. HTML fragments do, and so do SVGs pasted inline into a page. An SVG shown as an image (<code>![alt](demo.svg)</code> or <code>&lt;img&gt;</code>), which is how READMEs and PyPI show it, gets no pointer events at all, so there it has no effect. To let people read the end of a clip there, use <a href="../clip-format/#play-once"><code>loop</code></a> instead.</p>
+<h2 id="replaying-a-clip">Replaying a clip</h2>
+<p>Clips with <a href="../clip-format/#play-once"><code>loop</code></a> set stop on their final frame. To watch one again, reload the page.</p>
+<h3 id="html-the-replay-button">HTML: the replay button</h3>
+<p>An HTML clip that stops gets a <strong>↻ Replay</strong> button in its top corner, shown once every play has finished. Click it, or press Space when it has keyboard focus, and the clip starts again from the beginning. There's no JavaScript: while the button is held down the clip's animations are removed, and letting go starts them all again. With <code>pause_on_hover</code>, the button's timer pauses along with the clip, so it never shows early.</p>
+<p>Two limitations, because it's CSS only:</p>
+<ul>
+<li>Enter doesn't replay. Browsers only treat a button as pressed for Space, so use Space from the keyboard.</li>
+<li>On touch screens, Safari on iOS may not show a button as pressed without JavaScript on the page, so the button might not work there. Reloading the page always replays the clip.</li>
+</ul>
+<p>The <a href="../examples/#play-once-pause-and-replay">examples</a> page has one to try.</p>
+<h3 id="svg-link-the-image-to-itself">SVG: link the image to itself</h3>
+<p>An SVG shown as an image gets no clicks, so it can't have a button. Instead, wrap the image in a link to the same file. Clicking it opens the SVG on its own, which plays it from the start:</p>
+<div class="highlight"><pre><span></span><code>[<span class="nt">![zoetty building a clip</span>](<span class="na">https://raw.githubusercontent.com/you/project/main/docs/clips/demo.svg</span>)](https://raw.githubusercontent.com/you/project/main/docs/clips/demo.svg)
+</code></pre></div>
+<p>This works on PyPI as well as GitHub, and in any page that shows Markdown or HTML images.</p>
+<h3 id="clips-start-when-the-page-loads">Clips start when the page loads</h3>
+<p>An animation starts when the page loads, not when it's scrolled into view. On a long README, a clip that plays once may have finished before anyone scrolls down to it. They'll still see its final frame, which is often what matters most. If the animation itself matters, give the clip a few plays with <code>loop = 3</code>, or keep it near the top of the page.</p>
 <h2 id="matching-your-sites-colours">Matching your site's colours</h2>
-<p>Set <code>[theme]</code> to your site's code colours, so a clip sits next to your code blocks as if it belonged there:</p>
+<p>Pick the <a href="../themes/">theme preset</a> closest to your site's code colours, or set <code>[theme]</code> to them, so a clip sits next to your code blocks as if it belonged there:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[theme]</span>
 <span class="n">bg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#282c34"</span>
 <span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#21252b"</span>
 <span class="n">fg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#abb2bf"</span>
 </code></pre></div>
+<p>HTML fragments can also be restyled from your site's CSS, light and dark modes included: see <a href="../themes/#restyling-html-clips-with-css">restyling HTML clips</a>.</p>
 <h2 id="keeping-clips-fresh">Keeping clips fresh</h2>
 <p>Commit the spec, the captures and the built files. When the tool a clip shows changes:</p>
 <div class="highlight"><pre><span></span><code>zoetty<span class="w"> </span>record<span class="w"> </span>docs/clips/*.toml
@@ -931,7 +1103,7 @@ git<span class="w"> </span>diff<span class="w"> </span>docs/clips/
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 📟 Command line">
+          <a href="../themes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 🎨 Themes">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -941,7 +1113,7 @@ git<span class="w"> </span>diff<span class="w"> </span>docs/clips/
                 Previous
               </span>
               <div class="md-ellipsis">
-                📟 Command line
+                🎨 Themes
               </div>
             </div>
           </a>

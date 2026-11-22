@@ -15,7 +15,7 @@
         <link rel="prev" href="../clip-format/">
       
       
-        <link rel="next" href="../embedding/">
+        <link rel="next" href="../themes/">
       
       
         
@@ -595,6 +595,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zoetty-themes-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>zoetty themes [NAME]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zoetty-version" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -609,6 +620,33 @@
   
 </nav>
       
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  🎨 Themes
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -814,6 +852,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zoetty-themes-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>zoetty themes [NAME]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zoetty-version" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -845,7 +894,7 @@
 
 
 <h1 id="command-line">📟 Command line</h1>
-<p>Every command takes one or more spec files, so a shell glob does a whole folder: <code>zoetty build docs/clips/*.toml</code>.</p>
+<p>Every command but <code>themes</code> takes one or more spec files, so a shell glob does a whole folder: <code>zoetty build docs/clips/*.toml</code>.</p>
 <h2 id="zoetty-init-spec"><code>zoetty init SPEC</code></h2>
 <p>Writes a starter spec to <code>SPEC</code>, which builds as it is. It won't overwrite a file that already exists.</p>
 <div class="highlight"><pre><span></span><code>zoetty<span class="w"> </span>init<span class="w"> </span>docs/clips/hello.toml
@@ -876,6 +925,24 @@
 ✗ docs/clips/zen.svg is out of date: run zoetty build docs/clips/zen.toml
 </code></pre></div>
 <p><code>check</code> doesn't re-record anything: it trusts the captures in your repo. It only needs zoetty installed, not the tools your clips show.</p>
+<h2 id="zoetty-themes-name"><code>zoetty themes [NAME]</code></h2>
+<p>Lists the <a href="../clip-format/#theme-colours">theme presets</a> with a swatch of each colour. Use one with <code>theme = "NAME"</code>.</p>
+<div class="highlight"><pre><span></span><code>zoetty<span class="w"> </span>themes
+</code></pre></div>
+<p>With a name, prints that preset as a <code>[theme]</code> table, to paste into a spec and change:</p>
+<div class="highlight"><pre><span></span><code>zoetty<span class="w"> </span>themes<span class="w"> </span>nord
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">[theme]</span>
+<span class="n">bg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#2e3440"</span>
+<span class="n">fg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#d8dee9"</span>
+<span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#3b4252"</span>
+<span class="n">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#bf616a"</span>
+<span class="n">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#a3be8c"</span>
+<span class="n">yellow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#ebcb8b"</span>
+<span class="n">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#81a1c1"</span>
+<span class="n">magenta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#b48ead"</span>
+<span class="n">cyan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#88c0d0"</span>
+</code></pre></div>
 <h2 id="zoetty-version"><code>zoetty --version</code></h2>
 <p>Prints the version.</p>
 
@@ -926,13 +993,13 @@
         
         
           
-          <a href="../embedding/" class="md-footer__link md-footer__link--next" aria-label="Next: 🖼️ Embedding clips">
+          <a href="../themes/" class="md-footer__link md-footer__link--next" aria-label="Next: 🎨 Themes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                🖼️ Embedding clips
+                🎨 Themes
               </div>
             </div>
             <div class="md-footer__button md-icon">

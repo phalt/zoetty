@@ -519,6 +519,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  🎨 Themes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../embedding/" class="md-nav__link">
         
   
@@ -642,6 +669,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Scrolling and themes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-once-pause-and-replay" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Play once, pause and replay
       </span>
     </span>
   </a>
@@ -818,6 +856,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Scrolling and themes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-once-pause-and-replay" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Play once, pause and replay
       </span>
     </span>
   </a>
@@ -1081,6 +1130,59 @@
 @keyframes zt-zen-scroll{0%{transform:translateY(0)}34.345%{transform:translateY(-1.5em)}36.295%{transform:translateY(-3em)}38.245%{transform:translateY(-4.5em)}40.195%{transform:translateY(-6em)}42.145%{transform:translateY(-7.5em)}44.095%{transform:translateY(-9em)}46.046%{transform:translateY(-10.5em)}47.996%{transform:translateY(-12em)}49.946%{transform:translateY(-13.5em)}51.896%{transform:translateY(-15em)}53.846%{transform:translateY(-16.5em)}55.796%{transform:translateY(-18em)}67.497%{transform:translateY(-19.5em)}100%{transform:translateY(-19.5em)}}
 @keyframes zt-zen-fade{0%{opacity:1}93.499%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.zt-zen *{animation:none!important}.zt-zen-ln{opacity:1}.zt-zen-type{width:auto}.zt-zen-caret{display:none}.zt-zen-body{transform:translateY(-19.5em)}}
+</style>
+
+<h2 id="play-once-pause-and-replay">Play once, pause and replay</h2>
+<p><code>loop = false</code> plays the clip once and leaves the result on screen to read. As an HTML fragment it then shows a replay button. <code>pause_on_hover</code> stops it on any frame while your pointer is over it.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Plays once and stops on the final frame, with a replay button and pause on hover.</span>
+<span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~/zoetty"</span>
+<span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zoetty check confirms three clips are up to date, then the clip stops on the result"</span>
+<span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">84</span>
+<span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"once.html"</span><span class="p">]</span>
+<span class="n">loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="n">pause_on_hover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+
+<span class="k">[record]</span>
+<span class="n">cwd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"../.."</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"zoetty check docs/clips/hello.toml docs/clips/repl.toml docs/clips/zen.toml"</span>
+<span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"captures/once.ansi"</span>
+</code></pre></div>
+<div class="zt-once">
+<div class="zt-once-bar"><span></span><span></span><span></span><b>~/zoetty</b></div>
+<div class="zt-once-screen" role="img" aria-label="zoetty check confirms three clips are up to date, then the clip stops on the result" tabindex="0" style="animation-name:zt-once-fade;animation-iteration-count:0;animation-fill-mode:none"><div class="zt-once-view"><div class="zt-once-body" style="animation-name:zt-once-scroll"><div class="zt-once-ln" style="animation-name:zt-once-l0"><span class="zt-once-dim">$</span> <span class="zt-once-type " style="animation-name:zt-once-t0-2">zoetty check docs/clips/hello.toml docs/clips/repl.toml docs/clips/zen.toml</span><span class="zt-once-caret" style="animation-name:zt-once-k0"><i></i></span></div><div class="zt-once-ln" style="animation-name:zt-once-l1"><span class="zt-once-green">✓</span> docs/clips/hello.toml</div><div class="zt-once-ln" style="animation-name:zt-once-l2"><span class="zt-once-green">✓</span> docs/clips/repl.toml</div><div class="zt-once-ln" style="animation-name:zt-once-l3"><span class="zt-once-green">✓</span> docs/clips/zen.toml</div><div class="zt-once-ln" style="animation-name:zt-once-l4"><span class="zt-once-dim">$</span> <span class="zt-once-caret" style="animation-name:zt-once-k4"><i></i></span></div></div></div></div>
+<button type="button" class="zt-once-replay"><span aria-hidden="true">↻</span> Replay</button>
+</div>
+<style>
+.zt-once{--bg:#1c1c1c;--fg:#d0d0d0;--bar:#2a2a2a;--blue:#4b8fe3;--green:#2fcf7a;--yellow:#e6e04a;--red:#e05252;--cyan:#4fc6d6;--magenta:#c678dd;font:clamp(9px,1.6vw,14px)/1.5 ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc(84ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}
+.zt-once-bar{display:flex;align-items:center;gap:.45em;padding:.6em .9em;background:var(--bar)}
+.zt-once-bar span{width:.8em;height:.8em;border-radius:50%;background:var(--fg);opacity:.3}
+.zt-once-bar b{flex:1;text-align:center;font-weight:400;opacity:.5;margin-right:3em}
+.zt-once-screen{padding:1em 1.5em 1.2em}
+.zt-once-view{height:7.5em;overflow:hidden}
+.zt-once-screen,.zt-once-body,.zt-once-ln,.zt-once-type,.zt-once-caret{animation-duration:8.36s;animation-iteration-count:1;animation-fill-mode:forwards;animation-timing-function:step-end}
+.zt-once-ln{white-space:pre;opacity:0}
+.zt-once-type{display:inline-block;vertical-align:bottom;overflow:hidden;width:0}
+.zt-once-caret{opacity:0}
+.zt-once-caret i{display:inline-block;width:.6em;height:1.15em;vertical-align:-.2em;background:var(--fg);animation:zt-once-blink 1s step-end infinite}
+@keyframes zt-once-blink{50%{opacity:0}}
+.zt-once-dim{opacity:.55}.zt-once-bold{font-weight:700}.zt-once-italic{font-style:italic}.zt-once-blue{color:var(--blue)}.zt-once-green{color:var(--green)}.zt-once-yellow{color:var(--yellow)}.zt-once-red{color:var(--red)}.zt-once-cyan{color:var(--cyan)}.zt-once-magenta{color:var(--magenta)}
+@keyframes zt-once-l0{0%{opacity:0}4.785%,100%{opacity:1}}
+@keyframes zt-once-t0-2{0%,6.579%{width:0;animation-timing-function:steps(75,end)}32.895%,100%{width:75ch}}
+@keyframes zt-once-k0{0%{opacity:0}4.785%{opacity:1}38.876%,100%{opacity:0}}
+@keyframes zt-once-l1{0%{opacity:0}38.876%,100%{opacity:1}}
+@keyframes zt-once-l2{0%{opacity:0}39.713%,100%{opacity:1}}
+@keyframes zt-once-l3{0%{opacity:0}40.550%,100%{opacity:1}}
+@keyframes zt-once-l4{0%{opacity:0}52.153%,100%{opacity:1}}
+@keyframes zt-once-k4{0%{opacity:0}52.153%,100%{opacity:1}}
+@keyframes zt-once-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0em)}}
+@keyframes zt-once-fade{0%{opacity:1}92.823%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+.zt-once:has(.zt-once-screen:hover) *,.zt-once:has(.zt-once-screen:focus) *{animation-play-state:paused}
+.zt-once{position:relative}.zt-once-replay{visibility:hidden;animation:zt-once-done 0s 8.36s forwards;position:absolute;top:.3em;right:.6em;font:inherit;font-size:.85em;color:var(--fg);background:var(--bg);border:0;border-radius:.4em;padding:.15em .6em;cursor:pointer;opacity:.75}.zt-once-replay:hover,.zt-once-replay:focus-visible{opacity:1}.zt-once-replay:focus-visible{visibility:visible}
+@keyframes zt-once-done{to{visibility:visible}}
+.zt-once:has(.zt-once-replay:active) *{animation-name:none!important}
+@media (prefers-reduced-motion:reduce){.zt-once *{animation:none!important}.zt-once-ln{opacity:1}.zt-once-type{width:auto}.zt-once-caret{display:none}.zt-once-body{transform:translateY(-0em)}.zt-once-replay{display:none}}
 </style>
 
 <h2 id="hand-timed-steps">Hand-timed steps</h2>

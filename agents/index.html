@@ -519,6 +519,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  🎨 Themes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../embedding/" class="md-nav__link">
         
   
@@ -857,6 +884,7 @@ embed the SVG in README.md, and add `zoetty check docs/clips/*.toml` to CI.
 <li>Use <code>[record] setup</code> to reset anything a command creates (<code>rm -rf my_output</code>), so recording again gives the same clip.</li>
 <li>Use <code>exec</code> when the command needs a path or prefix the reader shouldn't see (<code>.venv/bin/tool</code>, <code>uv run tool</code>, <code>cd example &amp;&amp;</code>).</li>
 <li>Use <code>input</code> for anything that prompts or for a REPL. It's sent after the program goes quiet, then Ctrl-D.</li>
+<li>To match the project's colours, set <code>theme</code> to the closest <a href="../themes/">preset</a>, and for HTML fragments override its CSS variables in the site's stylesheet.</li>
 </ul>
 </li>
 <li><strong>Record it</strong>: <code>zoetty record docs/clips/&lt;name&gt;.toml</code>. Read the output: every run should be <code>✓</code>, or <code>!</code> if the command is meant to fail. Open the capture files and check they hold what you expected. Never edit captures by hand: fix the spec or the setup and record again.</li>

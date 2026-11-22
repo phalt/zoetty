@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="196" viewBox="0 0 384 196" role="img" aria-label="The rose-pine theme: a terminal showing text in each of its colours">
+<title>The rose-pine theme: a terminal showing text in each of its colours</title>
+<style>
+text{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono","Liberation Mono",monospace;font-size:14px;white-space:pre}
+.a{animation-duration:0.8s;animation-iteration-count:1;animation-fill-mode:forwards;animation-timing-function:step-end}
+.blink{animation:zt-rose-pine-blink 1s step-end infinite}
+@keyframes zt-rose-pine-blink{50%{opacity:0}}
+@keyframes zt-rose-pine-l0{0%{opacity:0}0.000%,100%{opacity:1}}
+@keyframes zt-rose-pine-l1{0%{opacity:0}0.000%,100%{opacity:1}}
+@keyframes zt-rose-pine-l2{0%{opacity:0}0.000%,100%{opacity:1}}
+@keyframes zt-rose-pine-l3{0%{opacity:0}0.000%,100%{opacity:1}}
+@keyframes zt-rose-pine-l4{0%{opacity:0}0.000%,100%{opacity:1}}
+@keyframes zt-rose-pine-l5{0%{opacity:0}37.500%,100%{opacity:1}}
+@keyframes zt-rose-pine-k5{0%{opacity:0}37.500%,100%{opacity:1}}
+@keyframes zt-rose-pine-scroll{0%{transform:translateY(0)}100%{transform:translateY(-0px)}}
+@keyframes zt-rose-pine-fade{0%{opacity:1}25.000%{opacity:1;animation-timing-function:ease}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.a,.blink{animation:none!important}.cover,.caret{display:none}.scroll{transform:translateY(-0px)}}
+</style>
+<defs><clipPath id="zt-rose-pine-screen"><rect x="0" y="52" width="384" height="126"/></clipPath></defs>
+<rect width="384" height="196" rx="10" fill="#191724"/>
+<path d="M0 10a10 10 0 0 1 10-10h364a10 10 0 0 1 10 10v24h-384z" fill="#1f1d2e"/><circle cx="18" cy="17.0" r="5.5" fill="#e0def4" opacity=".3"/><circle cx="36" cy="17.0" r="5.5" fill="#e0def4" opacity=".3"/><circle cx="54" cy="17.0" r="5.5" fill="#e0def4" opacity=".3"/><text x="192.0" y="22.0" text-anchor="middle" opacity=".5" fill="#e0def4" style="font-size:13px">rose-pine</text>
+<g clip-path="url(#zt-rose-pine-screen)" fill="#e0def4"><g class="a" style="animation-name:zt-rose-pine-fade;animation-iteration-count:0;animation-fill-mode:none"><g class="a scroll" style="animation-name:zt-rose-pine-scroll">
+<g class="a" style="animation-name:zt-rose-pine-l0"><text x="24.0" y="67.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="67.8" textLength="16.8" lengthAdjust="spacingAndGlyphs">ls</text>
+</g>
+<g class="a" style="animation-name:zt-rose-pine-l1"><text x="24.0" y="88.8" textLength="33.6" lengthAdjust="spacingAndGlyphs" fill="#9ccfd8">docs</text><text x="74.4" y="88.8" textLength="33.6" lengthAdjust="spacingAndGlyphs" fill="#ebbcba">link</text><text x="124.8" y="88.8" textLength="58.8" lengthAdjust="spacingAndGlyphs" fill="#31748f">tool.py</text><text x="200.4" y="88.8" textLength="75.6" lengthAdjust="spacingAndGlyphs">README.md</text>
+</g>
+<g class="a" style="animation-name:zt-rose-pine-l2"><text x="24.0" y="109.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text><text x="40.8" y="109.8" textLength="84.0" lengthAdjust="spacingAndGlyphs">tool check</text>
+</g>
+<g class="a" style="animation-name:zt-rose-pine-l3"><text x="24.0" y="130.8" textLength="67.2" lengthAdjust="spacingAndGlyphs" fill="#31748f">✓ passed</text><text x="108.0" y="130.8" textLength="50.4" lengthAdjust="spacingAndGlyphs" fill="#f6c177">! slow</text><text x="175.2" y="130.8" textLength="67.2" lengthAdjust="spacingAndGlyphs" fill="#eb6f92">✗ failed</text>
+</g>
+<g class="a" style="animation-name:zt-rose-pine-l4"><text x="24.0" y="151.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" fill="#c4a7e7">●</text><text x="40.8" y="151.8" textLength="33.6" lengthAdjust="spacingAndGlyphs" font-weight="700">bold</text><text x="82.8" y="151.8" textLength="25.2" lengthAdjust="spacingAndGlyphs" opacity=".55">dim</text><text x="116.4" y="151.8" textLength="50.4" lengthAdjust="spacingAndGlyphs" font-style="italic">italic</text>
+</g>
+<g class="a" style="animation-name:zt-rose-pine-l5"><text x="24.0" y="172.8" textLength="8.4" lengthAdjust="spacingAndGlyphs" opacity=".55">$</text>
+</g>
+<g class="a caret" style="animation-name:zt-rose-pine-k5"><g><rect class="blink" x="40.8" y="159.0" width="8.4" height="17" fill="#e0def4"/></g></g>
+</g></g></g>
+</svg>

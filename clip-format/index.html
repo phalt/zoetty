@@ -535,6 +535,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#play-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Play once
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-commands" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -560,7 +571,7 @@
   <a href="#theme-colours" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <code>[theme]</code>: colours
+        <code>theme</code>: colours
       </span>
     </span>
   </a>
@@ -624,6 +635,33 @@
     
   
   📟 Command line
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  🎨 Themes
 
     
   </span>
@@ -803,6 +841,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#play-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Play once
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-commands" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -828,7 +877,7 @@
   <a href="#theme-colours" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        <code>[theme]</code>: colours
+        <code>theme</code>: colours
       </span>
     </span>
   </a>
@@ -968,8 +1017,29 @@
 <td><code>true</code></td>
 <td>Draw the window bar with its dots and title.</td>
 </tr>
+<tr>
+<td><code>loop</code></td>
+<td><code>true</code></td>
+<td><code>true</code> loops for ever. <code>false</code> plays once, and a number plays that many times; then the clip stays on its final frame so people can read it. See <a href="#play-once">play once</a>.</td>
+</tr>
+<tr>
+<td><code>pause_on_hover</code></td>
+<td><code>false</code></td>
+<td>Pause while the pointer is over the screen, or while it has focus (a keyboard user tabbing to it, or a tap on a touch screen). Works for HTML clips and inline SVGs, not SVGs shown as images. See <a href="../embedding/#pausing-to-read">embedding</a>.</td>
+</tr>
 </tbody>
 </table>
+<h2 id="play-once">Play once</h2>
+<p>A looping clip fades out and starts again just as people get to the end. If the end is what matters, let the clip stop there:</p>
+<div class="highlight"><pre><span></span><code><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Building a client, then listing what it wrote"</span>
+<span class="n">loop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="k">[[run]]</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ls my_client"</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"client.py  schemas.py"</span><span class="p">]</span>
+</code></pre></div>
+<p><code>loop = 3</code> plays three times and then stops. Either way, the last play doesn't fade: the clip stays on its final frame with the caret blinking. HTML clips that stop show a <a href="../embedding/#html-the-replay-button">replay button</a> when they finish.</p>
+<p>An animation in an image starts when the page loads, not when it's scrolled into view, so a clip far down a long page may have finished before anyone sees it. <a href="../embedding/#replaying-a-clip">Embedding</a> has ways to replay it.</p>
 <h2 id="run-commands"><code>[[run]]</code>: commands</h2>
 <p>Each run is a command typed at the prompt, followed by its output. Runs are shown in order.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[[run]]</span>
@@ -1079,7 +1149,11 @@
 </table>
 <p>Commands also get <code>TERM=xterm-256color</code>, <code>COLUMNS</code> and <code>LINES</code> from the clip's size, <code>FORCE_COLOR=1</code> and <code>CLICOLOR_FORCE=1</code> so they keep their colours, and <code>PAGER=cat</code> and <code>GIT_PAGER=cat</code> so nothing waits on a pager. <code>env</code> can override any of them.</p>
 <p>A command that exits non-zero is recorded like any other (failing commands make good demos too); <code>zoetty record</code> shows its exit code.</p>
-<h2 id="theme-colours"><code>[theme]</code>: colours</h2>
+<h2 id="theme-colours"><code>theme</code>: colours</h2>
+<p>Pick a preset by name:</p>
+<div class="highlight"><pre><span></span><code><span class="n">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"catppuccin-mocha"</span>
+</code></pre></div>
+<p>Or set colours yourself in a <code>[theme]</code> table:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[theme]</span>
 <span class="n">bg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#282c34"</span>
 <span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#21252b"</span>
@@ -1087,6 +1161,12 @@
 <span class="n">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#98c379"</span>
 </code></pre></div>
 <p><code>bg</code>, <code>fg</code> (text), <code>bar</code> (window bar) and the six colours <code>blue</code>, <code>green</code>, <code>yellow</code>, <code>red</code>, <code>cyan</code> and <code>magenta</code>, as <code>#rgb</code> or <code>#rrggbb</code>. Anything you don't set keeps its default.</p>
+<p>To start from a preset and change some of it, give the table a <code>name</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[theme]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dracula"</span>
+<span class="n">bg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#1e1f29"</span>
+</code></pre></div>
+<p>The presets are <code>catppuccin-latte</code>, <code>catppuccin-mocha</code>, <code>dracula</code>, <code>everforest</code>, <code>github-dark</code>, <code>github-light</code>, <code>gruvbox-dark</code>, <code>gruvbox-light</code>, <code>kanagawa</code>, <code>monokai-classic</code>, <code>monokai-pro</code>, <code>nord</code>, <code>one-dark</code>, <code>rose-pine</code>, <code>solarized-dark</code>, <code>solarized-light</code> and <code>tokyo-night</code>. See them all on the <a href="../themes/">themes</a> page.</p>
 <h2 id="markup">Markup</h2>
 <p><code>lines</code>, <code>prompt</code> and <code>final_prompt</code> use a small markup, a lot like <a href="https://rich.readthedocs.io/">rich</a>'s:</p>
 <table>
