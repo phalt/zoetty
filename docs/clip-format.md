@@ -98,7 +98,15 @@ Commands also get `TERM=xterm-256color`, `COLUMNS` and `LINES` from the clip's s
 
 A command that exits non-zero is recorded like any other (failing commands make good demos too); `zoetty record` shows its exit code.
 
-## `[theme]`: colours
+## `theme`: colours
+
+Pick a preset by name:
+
+```toml
+theme = "catppuccin-mocha"
+```
+
+Or set colours yourself in a `[theme]` table:
 
 ```toml
 [theme]
@@ -109,6 +117,16 @@ green = "#98c379"
 ```
 
 `bg`, `fg` (text), `bar` (window bar) and the six colours `blue`, `green`, `yellow`, `red`, `cyan` and `magenta`, as `#rgb` or `#rrggbb`. Anything you don't set keeps its default.
+
+To start from a preset and change some of it, give the table a `name`:
+
+```toml
+[theme]
+name = "dracula"
+bg = "#1e1f29"
+```
+
+The presets are `catppuccin-latte`, `catppuccin-mocha`, `dracula`, `everforest`, `github-dark`, `github-light`, `gruvbox-dark`, `gruvbox-light`, `kanagawa`, `monokai-classic`, `monokai-pro`, `nord`, `one-dark`, `rose-pine`, `solarized-dark`, `solarized-light` and `tokyo-night`.
 
 ## Markup
 

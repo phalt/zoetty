@@ -59,3 +59,14 @@ People want to read the end of a clip. Three spec additions, one commit each, do
 Defaults build byte-for-byte as before, so existing clips don't go stale.
 
 Risk: `:active` on iOS Safari is unreliable without JS. Checked in Chromium only; noted in the docs. Fallback if it misbehaves: a checkbox toggling between two copies of the keyframes.
+
+## Theme presets
+
+Status: approved (2026-11-22). Tasks 16-18 in [todo.md](todo.md#theme-presets).
+
+People want their clips to match their terminal. `[theme]` already holds the nine colours both renderers use, so a preset is a named copy of that table:
+
+- `theme = "dracula"` picks a preset; `[theme]` with `name = "dracula"` picks one and changes some colours. A table without `name` works as before, so existing clips don't go stale.
+- 17 presets in `zoetty/themes.py`, taken from Ghostty's bundled themes (iTerm2-Color-Schemes): `background`/`foreground` become `bg`/`fg`, palette 1-6 the six colours. Ghostty has no window bar colour, so `bar` is each theme's own darker surface (Catppuccin's mantle, Dracula's `#21222c`).
+- `zoetty themes` lists the presets with swatches; `zoetty themes NAME` prints that preset as a `[theme]` table to paste and edit.
+- A Themes docs page: a gallery clip per preset, the default theme as a `[theme]` table, and the HTML fragment's CSS variables and classes, so people and agents can restyle a clip from the page's CSS. All tested against the code.

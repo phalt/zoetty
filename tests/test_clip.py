@@ -3,7 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from zoetty.clip import DEFAULT_PROMPT, THEME, ClipError, load
+from zoetty.clip import DEFAULT_PROMPT, ClipError, load
+from zoetty.themes import DEFAULT as THEME
+from zoetty.themes import PRESETS
 
 MINIMAL = """
 label = "A clip"
@@ -206,7 +208,7 @@ def test_runs_or_steps_but_not_both_or_neither(spec):
 def test_wrongly_shaped_tables_are_reported_not_crashed_on(spec):
     found = problems(spec('label = "x"\nrecord = 1\ntheme = 2\nrun = 3\nout = "a.svg"'))
     assert "record should be a table, got 1" in found
-    assert "theme should be a table, got 2" in found
+    assert "theme should be a preset name or a table, got 2" in found
     assert "run should be a list of tables, got 3" in found
     assert "out should be a list of str, got 'a.svg'" in found
 
@@ -244,3 +246,22 @@ def test_loop_must_be_a_bool_or_a_positive_int(spec, value):
     assert problems(spec(f"loop = {value}\n" + MINIMAL)) == [
         f"loop should be true, false or a number of plays (1 or more), got {tomllib.loads(f'v = {value}')['v']!r}"
     ]
+
+
+def test_theme_picks_a_preset_by_name(spec):
+    clip = load(spec('theme = "dracula"\n' + MINIMAL))
+    assert clip.theme == PRESETS["dracula"]
+
+
+def test_theme_table_name_picks_a_preset_and_colours_override_it(spec):
+    clip = load(spec(MINIMAL + '\n[theme]\nname = "nord"\nbg = "#000"\n'))
+    assert clip.theme == PRESETS["nord"] | {"bg": "#000"}
+
+
+@pytest.mark.parametrize("theme", ['theme = "pink"', '[theme]\nname = "pink"', "[theme]\nname = 3"])
+def test_unknown_theme_names_list_the_presets(spec, theme):
+    top = theme.startswith("theme")
+    [problem] = problems(spec(theme + "\n" + MINIMAL if top else MINIMAL + "\n" + theme))
+    where = "theme" if top else "theme.name"
+    assert problem.startswith(f"{where} should be one of catppuccin-latte, catppuccin-mocha, dracula,")
+    assert problem.endswith(f"tokyo-night, got {'3' if '3' in theme else repr('pink')}")

@@ -6,21 +6,12 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from zoetty import themes
 from zoetty.markup import COLOURS, MarkupError, parse
 
 DEFAULT_PROMPT = "[dim]$[/] "
 
-THEME = {
-    "bg": "#1c1c1c",
-    "fg": "#d0d0d0",
-    "bar": "#2a2a2a",
-    "blue": "#4b8fe3",
-    "green": "#2fcf7a",
-    "yellow": "#e6e04a",
-    "red": "#e05252",
-    "cyan": "#4fc6d6",
-    "magenta": "#c678dd",
-}
+THEME = themes.DEFAULT
 assert set(THEME) == {"bg", "fg", "bar", *COLOURS}
 
 FORMATS = (".svg", ".html")
@@ -128,7 +119,7 @@ _TOP = {
     "loop": "loop",
     "pause_on_hover": "bool",
     "record": "table",
-    "theme": "table",
+    "theme": "theme",
     "run": "list of tables",
     "step": "list of tables",
 }
@@ -170,6 +161,9 @@ def _problem(kind: _Kind, value: Any) -> str | None:
             return f"should be true, false or a number of plays (1 or more), got {value!r}"
         case "positive number":
             ok = _number(value) and value > 0
+        case "theme":
+            ok = isinstance(value, str | dict)
+            kind = "preset name or a table"
         case "table":
             ok = isinstance(value, dict)
         case "table of str":
@@ -213,7 +207,21 @@ def load(path: Path) -> Clip:
         problems.append("label is required: it's the alt text people without the animation get")
     record = data.get("record", {}) if isinstance(data.get("record"), dict) else {}
     _check(record, _RECORD, "record.", problems)
-    theme = data.get("theme", {}) if isinstance(data.get("theme"), dict) else {}
+    theme = data.get("theme", {})
+    where = "theme"
+    if isinstance(theme, str):
+        theme = {"name": theme}
+    elif isinstance(theme, dict):
+        theme, where = dict(theme), "theme.name"
+    else:
+        theme = {}
+    preset = THEME
+    if "name" in theme:
+        name = theme.pop("name")
+        if name in themes.PRESETS:
+            preset = themes.PRESETS[name]
+        else:
+            problems.append(f"{where} should be one of {', '.join(themes.PRESETS)}, got {name!r}")
     for key, value in theme.items():
         if key not in THEME:
             problems.append(f"theme.{key} isn't a theme colour: use {', '.join(THEME)}")
@@ -257,7 +265,7 @@ def load(path: Path) -> Clip:
             env=record.get("env", {}),
             timeout=record.get("timeout", 60),
         ),
-        theme=THEME | theme,
+        theme=preset | theme,
         title=data.get("title", ""),
         cols=data.get("cols", 80),
         rows=data.get("rows"),

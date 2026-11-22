@@ -57,7 +57,8 @@ env = { NO_COLOR = "" }          # extra environment
 timeout = 60                     # seconds per command
 
 [theme]                          # optional, any of: bg fg bar blue green yellow red cyan magenta
-bg = "#282c34"
+name = "one-dark"                # optional, a preset to start from (zoetty themes lists them)
+bg = "#282c34"                   # or just: theme = "one-dark"
 
 [[run]]                          # one or more, shown in order
 cmd = "clientele start-api -f schema.json -o my_client/"   # what is typed on screen

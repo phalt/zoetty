@@ -99,7 +99,7 @@ layers = [
     "zoetty.record | zoetty.svg | zoetty.html",
     "zoetty.timeline",
     "zoetty.clip",
-    "zoetty.ansi",
+    "zoetty.ansi | zoetty.themes",
     "zoetty.markup",
     "zoetty.settings",
 ]
@@ -121,6 +121,7 @@ source_modules = [
     "zoetty.timeline",
     "zoetty.clip",
     "zoetty.ansi",
+    "zoetty.themes",
     "zoetty.markup",
     "zoetty.settings",
 ]
