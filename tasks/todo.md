@@ -110,23 +110,23 @@ From user feedback: "I just want to be able to read what it's actually doing at 
 
 # Theme presets
 
-Status: in progress. Plan: [tasks/plan.md](plan.md#theme-presets).
+Status: done (2026-11-22). Plan: [tasks/plan.md](plan.md#theme-presets).
 
 ## Task 16: presets and loading
 
-- [ ] `zoetty/themes.py`: the default and 17 presets, each with exactly the nine theme keys
-- [ ] `theme = "<name>"` and `[theme] name = "<name>"` load the preset, table colours override it
-- [ ] Unknown names, and non-string names, are errors listing the presets
-- [ ] No theme, or a table without `name`, builds exactly as before
+- [x] `zoetty/themes.py`: the default and 17 presets, each with exactly the nine theme keys
+- [x] `theme = "<name>"` and `[theme] name = "<name>"` load the preset, table colours override it
+- [x] Unknown names, and non-string names, are errors listing the presets
+- [x] No theme, or a table without `name`, builds exactly as before
 
 ## Task 17: docs and dogfood
 
-- [ ] Themes page: a gallery clip per preset, checked in the test suite
-- [ ] The default theme as a `[theme]` table, and the HTML CSS variables and classes, tested against the code
-- [ ] Clip format, spec, embedding, agents, changelog
+- [x] Themes page: a gallery clip per preset, checked in the test suite
+- [x] The default theme as a `[theme]` table, and the HTML CSS variables and classes, tested against the code
+- [x] Clip format, spec, embedding, agents, changelog
 
 ## Task 18: `zoetty themes`
 
-- [ ] `zoetty themes` lists every preset with swatches
-- [ ] `zoetty themes NAME` prints the preset as a `[theme]` table that loads; unknown names fail listing the presets
-- [ ] Docs: command line, changelog
+- [x] `zoetty themes` lists every preset with swatches
+- [x] `zoetty themes NAME` prints the preset as a `[theme]` table that loads; unknown names fail listing the presets
+- [x] Docs: command line, changelog
