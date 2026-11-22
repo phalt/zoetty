@@ -65,16 +65,29 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
     if clip.chrome:
         bar = f'<div class="{n}-bar"><span></span><span></span><span></span><b>{escape(clip.title)}</b></div>\n'
     image = f' role="img" aria-label="{escape(clip.label)}"'
-    outer, screen, pause = image, "", ""
-    if clip.pause_on_hover:  # the screen takes focus, so it carries the image role and label
-        outer, screen = "", f'{image} tabindex="0"'
-        pause = (
-            f"\n.{n}-screen:hover,.{n}-screen:hover *,.{n}-screen:focus,.{n}-screen:focus *"
-            "{animation-play-state:paused}"
+    outer, screen, replay, extra, still = image, "", "", "", ""
+    if clip.pause_on_hover or timeline.plays is not None:
+        # The screen is the image, so a focusable screen or a replay button beside it stays reachable.
+        outer, screen = "", image
+    if clip.pause_on_hover:  # everything pauses, the replay button's timer included
+        screen += ' tabindex="0"'
+        extra += f"\n.{n}:has(.{n}-screen:hover) *,.{n}:has(.{n}-screen:focus) *{{animation-play-state:paused}}"
+    if timeline.plays is not None:
+        # Shown once every play is done. Holding it removes every animation; letting go restarts them all.
+        replay = f'\n<button type="button" class="{n}-replay"><span aria-hidden="true">↻</span> Replay</button>'
+        extra += (
+            f"\n.{n}{{position:relative}}"
+            f".{n}-replay{{visibility:hidden;animation:{n}-done 0s {round(timeline.plays * total, 3):g}s forwards;"
+            "position:absolute;top:.3em;right:.6em;font:inherit;font-size:.85em;color:var(--fg);"
+            "background:var(--bg);border:0;border-radius:.4em;padding:.15em .6em;cursor:pointer;opacity:.75}"
+            f".{n}-replay:hover,.{n}-replay:focus-visible{{opacity:1}}.{n}-replay:focus-visible{{visibility:visible}}"
+            f"\n@keyframes {n}-done{{to{{visibility:visible}}}}"
+            f"\n.{n}:has(.{n}-replay:active) *{{animation-name:none!important}}"
         )
+        still = f".{n}-replay{{display:none}}"
     newline = "\n"
     return f"""<div class="{n}"{outer}>
-{bar}<div class="{n}-screen"{screen} style="{timeline.fading(n)}"><div class="{n}-view"><div class="{n}-body" style="animation-name:{n}-scroll">{"".join(body)}</div></div></div>
+{bar}<div class="{n}-screen"{screen} style="{timeline.fading(n)}"><div class="{n}-view"><div class="{n}-body" style="animation-name:{n}-scroll">{"".join(body)}</div></div></div>{replay}
 </div>
 <style>
 .{n}{{{theme}font:clamp(9px,1.6vw,14px)/1.5 {FONTS};background:var(--bg);color:var(--fg);border-radius:10px;overflow:hidden;width:min(100%,calc({clip.cols}ch + 3em));box-shadow:0 10px 30px #0006;text-align:left;margin:1.5em 0}}
@@ -90,7 +103,7 @@ def render(clip: Clip, timeline: Timeline, name: str) -> str:
 .{n}-caret i{{display:inline-block;width:.6em;height:1.15em;vertical-align:-.2em;background:var(--fg);animation:{n}-blink 1s step-end infinite}}
 @keyframes {n}-blink{{50%{{opacity:0}}}}
 .{n}-dim{{opacity:.55}}.{n}-bold{{font-weight:700}}.{n}-italic{{font-style:italic}}{colours}
-{newline.join(css)}{pause}
-@media (prefers-reduced-motion:reduce){{.{n} *{{animation:none!important}}.{n}-ln{{opacity:1}}.{n}-type{{width:auto}}.{n}-caret{{display:none}}.{n}-body{{transform:translateY(-{last:g}em)}}}}
+{newline.join(css)}{extra}
+@media (prefers-reduced-motion:reduce){{.{n} *{{animation:none!important}}.{n}-ln{{opacity:1}}.{n}-type{{width:auto}}.{n}-caret{{display:none}}.{n}-body{{transform:translateY(-{last:g}em)}}{still}}}
 </style>
 """

@@ -48,6 +48,16 @@ zoetty recording itself. Each run has an `output` file, so `zoetty record` runs 
 
 --8<-- "clips/zen.html"
 
+## Play once, pause and replay
+
+`loop = false` plays the clip once and leaves the result on screen to read. As an HTML fragment it then shows a replay button. `pause_on_hover` stops it on any frame while your pointer is over it.
+
+```toml
+--8<-- "clips/once.toml"
+```
+
+--8<-- "clips/once.html"
+
 ## Hand-timed steps
 
 For clips that aren't a series of commands, `[[step]]` entries say exactly when each line appears and `[type ...]` types text out. This one re-enacts a [paulrun](https://github.com/phalt/paulrun) session and is the clip on paulrun's README.

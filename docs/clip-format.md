@@ -46,7 +46,7 @@ cmd = "ls my_client"
 lines = ["client.py  schemas.py"]
 ```
 
-`loop = 3` plays three times and then stops. Either way, the last play doesn't fade: the clip stays on its final frame with the caret blinking.
+`loop = 3` plays three times and then stops. Either way, the last play doesn't fade: the clip stays on its final frame with the caret blinking. HTML clips that stop show a [replay button](embedding.md#html-the-replay-button) when they finish.
 
 An animation in an image starts when the page loads, not when it's scrolled into view, so a clip far down a long page may have finished before anyone sees it. [Embedding](embedding.md#replaying-a-clip) has ways to replay it.
 

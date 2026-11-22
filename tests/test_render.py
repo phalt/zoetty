@@ -175,7 +175,30 @@ def test_html_pauses_on_hover_and_focus_of_the_screen(spec):
     # The screen takes focus (keyboard, or a tap on a touch screen) and carries the image role and label.
     assert out.startswith('<div class="zt-x">')
     assert '<div class="zt-x-screen" role="img" aria-label="A demo &amp; &lt;friends&gt;" tabindex="0" style=' in out
-    assert (
-        ".zt-x-screen:hover,.zt-x-screen:hover *,.zt-x-screen:focus,.zt-x-screen:focus *{animation-play-state:paused}"
-        in out
-    )
+    # Everything pauses, the replay button's timer included, so it can't show before the clip ends.
+    assert ".zt-x:has(.zt-x-screen:hover) *,.zt-x:has(.zt-x-screen:focus) *{animation-play-state:paused}" in out
+
+
+def test_looping_html_clips_have_no_replay_button(spec):
+    assert "replay" not in built(spec, "", html.render)
+
+
+def test_html_clips_that_stop_get_a_replay_button_once_every_play_is_done(spec):
+    clip = load(spec("loop = 3\n" + SPEC))
+    out = html.render(clip, timeline.build(clip), "zt-x")
+    total = timeline.build(clip).duration
+    # The screen is the image, so the button beside it isn't hidden from assistive tech.
+    assert out.startswith('<div class="zt-x">')
+    assert '<div class="zt-x-screen" role="img" aria-label="A demo &amp; &lt;friends&gt;" style=' in out
+    assert '<button type="button" class="zt-x-replay"><span aria-hidden="true">↻</span> Replay</button>' in out
+    assert f".zt-x-replay{{visibility:hidden;animation:zt-x-done 0s {round(3 * total, 3):g}s forwards" in out
+    assert "@keyframes zt-x-done{to{visibility:visible}}" in out
+    # A keyboard user's focus stays on the button through a replay, instead of dropping to the page.
+    assert ".zt-x-replay:focus-visible{visibility:visible}" in out
+    # Holding the button removes every animation; letting go starts them all again, the button's timer too.
+    assert ".zt-x:has(.zt-x-replay:active) *{animation-name:none!important}" in out
+    assert re.search(r"prefers-reduced-motion:reduce\)\{[^\n]*\.zt-x-replay\{display:none\}", out)
+
+
+def test_svg_has_no_replay_button(spec):
+    assert "replay" not in built(spec, "loop = false", svg.render).lower()

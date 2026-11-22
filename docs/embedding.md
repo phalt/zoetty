@@ -67,6 +67,17 @@ This needs the clip to get pointer events. HTML fragments do, and so do SVGs pas
 
 Clips with [`loop`](clip-format.md#play-once) set stop on their final frame. To watch one again, reload the page.
 
+### HTML: the replay button
+
+An HTML clip that stops gets a **↻ Replay** button in its top corner, shown once every play has finished. Click it, or press Space when it has keyboard focus, and the clip starts again from the beginning. There's no JavaScript: while the button is held down the clip's animations are removed, and letting go starts them all again. With `pause_on_hover`, the button's timer pauses along with the clip, so it never shows early.
+
+Two limitations, because it's CSS only:
+
+- Enter doesn't replay. Browsers only treat a button as pressed for Space, so use Space from the keyboard.
+- On touch screens, Safari on iOS may not show a button as pressed without JavaScript on the page, so the button might not work there. Reloading the page always replays the clip.
+
+The [examples](examples.md#play-once-pause-and-replay) page has one to try.
+
 ## Matching your site's colours
 
 Set `[theme]` to your site's code colours, so a clip sits next to your code blocks as if it belonged there:

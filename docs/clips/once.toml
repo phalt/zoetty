@@ -1,0 +1,14 @@
+# Plays once and stops on the final frame, with a replay button and pause on hover.
+title = "~/zoetty"
+label = "zoetty check confirms three clips are up to date, then the clip stops on the result"
+cols = 84
+out = ["once.html"]
+loop = false
+pause_on_hover = true
+
+[record]
+cwd = "../.."
+
+[[run]]
+cmd = "zoetty check docs/clips/hello.toml docs/clips/repl.toml docs/clips/zen.toml"
+output = "captures/once.ansi"
